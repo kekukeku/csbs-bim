@@ -396,18 +396,18 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
           <div className="max-w-5xl mx-auto py-6 animate-fadeIn">
             <div className="text-center mb-5">
               <span className="text-xs font-mono text-ocean-400 font-medium uppercase">Slide 16 / 20</span>
-              <h2 className="text-2xl font-bold text-white">針對台船高層的提案策略與溝通要點</h2>
+              <h2 className="text-2xl font-bold text-white">針對決策與執行層的提案溝通要點</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {STAKEHOLDER_PERSONAS.map(p => (
-                <div key={p.id} className="p-5 rounded-xl bg-marine-900/60 border border-white/10 space-y-3">
-                  <h3 className="text-sm font-bold text-white">{p.title}</h3>
-                  <div className="p-2.5 rounded-lg bg-marine-950/80 border border-white/5 text-xs text-marine-300">
-                    <strong className="text-sand-300 block mb-0.5">核心關注：</strong>
+                <div key={p.id} className="p-6 rounded-2xl bg-marine-900/60 border border-white/10 space-y-4">
+                  <h3 className="text-base font-bold text-white">{p.title}</h3>
+                  <div className="p-3 rounded-xl bg-marine-950/80 border border-white/5 text-xs text-marine-300">
+                    <strong className="text-sand-300 block mb-1">核心關注：</strong>
                     {p.coreConcerns[0]}
                   </div>
-                  <div className="p-3 rounded-lg bg-sage-950/40 border border-sage-800/40 text-xs text-sage-300">
-                    <strong className="text-sage-400 block mb-0.5">提案說服話術：</strong>
+                  <div className="p-3.5 rounded-xl bg-sage-950/40 border border-sage-800/40 text-xs text-sage-300">
+                    <strong className="text-sage-400 block mb-1">提案說服話術：</strong>
                     {p.pitchHook}
                   </div>
                 </div>

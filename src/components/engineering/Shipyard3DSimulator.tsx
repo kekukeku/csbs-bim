@@ -137,7 +137,7 @@ export const Shipyard3DSimulator: React.FC = () => {
       setSensors(updated);
       setSelectedSensor(updated[0]);
       setLogMessages(prev => [
-        `[${now}] 【黃燈初級預警】大塢 450m 碼頭傾斜達 0.042 deg！已自動發送 LINE/SMS 通報現場蕭課長與巡檢班長查核`,
+        `[${now}] 【黃燈初級預警】大塢 450m 碼頭傾斜達 0.042 deg！已自動發送 LINE/SMS 通報工務主管與現場巡檢班長查核`,
         `[${now}] 【黃燈初級預警】小塢靠泊瞬間應變 298 με，接近安全上限`,
         ...prev.slice(0, 4)
       ]);
