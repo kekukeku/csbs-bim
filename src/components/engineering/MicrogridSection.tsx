@@ -79,14 +79,28 @@ export const MicrogridSection: React.FC = () => {
               </div>
 
               <div className="space-y-2.5 text-xs text-marine-300 leading-relaxed">
-                <div className="p-3 rounded-lg bg-marine-950/80 border border-white/5 space-y-0.5">
-                  <strong className="text-slate-200 block font-semibold">🔋 UL9540A 國際防爆認證：</strong>
-                  若經海軍核准，採用通過最嚴苛燃燒測試之非中資磷酸鐵鋰（LFP）電芯，或在地製造高安全性電池組。
+                <div className="p-3 rounded-lg bg-marine-950/80 border border-white/5 space-y-1.5">
+                  <strong className="text-slate-200 block font-semibold">🔋 台灣在地製造（國產自主高安全 LFP 電池組）：</strong>
+                  <ul className="space-y-1 text-[11px] text-marine-300">
+                    <li>• <strong className="text-ocean-300">台塑新智能（Formosa Smart Energy）</strong>：彰濱 2.1GWh 磷酸鋰鐵電芯廠（全台最大）</li>
+                    <li>• <strong className="text-ocean-300">鴻海科技集團（Foxconn）</strong>：高雄和發電池中心國產 LFP 電芯與儲能包</li>
+                    <li>• <strong className="text-ocean-300">長園科技（C-LiFe） / 昇陽電池（SYE）</strong>：在地高安全防爆工規電芯</li>
+                    <li>• <strong className="text-ocean-300">順達科技（Dynapack） / 新普科技（AES-KY）</strong>：國產自主安全 BMS 與模組封裝</li>
+                  </ul>
                 </div>
 
-                <div className="p-3 rounded-lg bg-marine-950/80 border border-white/5 space-y-0.5">
-                  <strong className="text-slate-200 block font-semibold">🛡️ BMS 與逆變器資安防護：</strong>
-                  全面採用臺灣、美日系通訊協定，嚴禁任何遠端雲端回傳大陸伺服器疑慮。
+                <div className="p-3 rounded-lg bg-marine-950/80 border border-white/5 space-y-1.5">
+                  <strong className="text-slate-200 block font-semibold">🌐 美歐日韓非中資國際一線品牌（軍規/工規 UL9540A 認證）：</strong>
+                  <ul className="space-y-1 text-[11px] text-marine-300">
+                    <li>• <strong className="text-sage-300">美國 American Battery Factory (ABF) / Our Next Energy (ONE) / KORE Power</strong>：美國本土製造 LFP 電芯</li>
+                    <li>• <strong className="text-sage-300">韓國 LG Energy Solution (LGES) / Samsung SDI</strong>：美韓工規 ESS 專用高安全儲能系統</li>
+                    <li>• <strong className="text-sage-300">挪威 Morrow Batteries / 德國 Liacon GmbH</strong>：歐洲自主工規與海事級 LFP 電芯</li>
+                    <li>• <strong className="text-sage-300">法國 Saft（TotalEnergies 旗下）</strong>：國際軍規防衛與港灣重工業級不斷電系統</li>
+                  </ul>
+                </div>
+
+                <div className="p-2.5 rounded-lg bg-marine-950/80 border border-white/5 text-[11px] text-sand-300">
+                  🛡️ <strong>資安與通訊防護：</strong>全面採用臺灣、美日系工控通訊協定，嚴禁任何遠端雲端回傳大陸伺服器疑慮。
                 </div>
               </div>
 

@@ -458,7 +458,7 @@ export const MICROGRID_DATA = {
   solutions: [
     {
       title: "國防國安非紅色供應鏈（選項服務）",
-      desc: "若經軍方核准，採用 UL9540A 認證之非中資 LFP 電芯或在地製造高安全性電池組，BMS 採用美日系通訊協定，嚴禁遠端回傳大陸疑慮。"
+      desc: "若經軍方核准，採用具備 UL9540A 認證之非中資 LFP 電芯或在地製造高安全性電池組：優先採用台灣在地製造【台塑新智能（彰濱 2.1GWh 磷酸鋰鐵電芯廠）、鴻海科技（高雄和發電池中心）、長園科技（C-LiFe）、順達/新普（AES）國產 BMS 模組】；或美歐日韓一線大廠【美國 American Battery Factory (ABF) / Our Next Energy (ONE) / KORE Power、韓國 LG Energy Solution (LGES) / Samsung SDI、挪威 Morrow Batteries、德國 Liacon、法國 Saft 軍規儲能系統】。通訊協定嚴禁遠端回傳大陸疑慮。"
     },
     {
       title: "平時模式（削峰填谷）",
