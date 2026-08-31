@@ -138,7 +138,7 @@ export const DECISION_GATES: DecisionGate[] = [
     gateId: "G03",
     name: "可施工版本 (Constructible)",
     timeline: "117 年 全年度",
-    triggerCondition: "四大淨空檢核合格，四類變更回寫標單，衝突結案率 $\\ge 90\\%$。",
+    triggerCondition: "四大淨空檢核合格，四類變更回寫標單，衝突結案率達 90% 以上。",
     keyDeliverables: [
       "無碰撞可施工版本圖說 (Shop Drawings)",
       "電梯、天車、堆高機淨空檢核合格書",
@@ -212,7 +212,7 @@ export const OBJECTIVE_KPIS: ObjectiveKPI[] = [
   },
   {
     indicator: "重大衝突結案率",
-    target: "各 Gate 簽認前 $\\ge 90\\%$",
+    target: "各 Gate 簽認前 ≥ 90%",
     significance: "進入施工版本前解決機電結構衝突，消除重工。",
     verificationMethod: "BIM 衝突矩陣檢核表與協調會議紀錄。"
   },
