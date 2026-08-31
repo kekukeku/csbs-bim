@@ -1,81 +1,71 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
-import { GlowCard } from '../ui/GlowCard';
 import { QUANTIFIED_ROI } from '../../data/proposalData';
-import { TrendingUp, Calculator, ShieldCheck, DollarSign, Sparkles, Sliders, CheckCircle2 } from 'lucide-react';
+import { TrendingUp, Calculator, ShieldCheck, CheckCircle2, DollarSign } from 'lucide-react';
 
 export const RoiMetricCards: React.FC = () => {
   // Interactive ROI Calculator State
-  const [projectBudget, setProjectBudget] = useState<number>(5000); // in NT$ 10,000 (i.e. 5,000萬)
-  const [downtimeLossEstimate, setDowntimeLossEstimate] = useState<number>(3000); // 3,000萬
-  const [reworkRiskPercent, setReworkRiskPercent] = useState<number>(20); // 20%
+  const [projectBudget, setProjectBudget] = useState<number>(5000); // 單位：萬元
+  const [annualDowntimeRisk, setAnnualDowntimeRisk] = useState<number>(3000); // 預期停工損失：萬元
 
-  // Calculated ROI values
-  const savedDowntime = Math.round(downtimeLossEstimate * 0.4); // 40% reduction
-  const savedRework = Math.round(projectBudget * (reworkRiskPercent / 100) * 0.2); // 20% cut of rework
-  const totalBenefit = savedDowntime + savedRework;
-  const roiMultiplier = ((totalBenefit / (projectBudget * 0.15)) || 3.2).toFixed(1);
+  // Calculations
+  const savedDowntime = Math.round(annualDowntimeRisk * 0.4); // 降低 40% 停工損失
+  const savedRework = Math.round(projectBudget * 0.04); // 節省約 4% 敲除重工
+  const totalAnnualBenefit = savedDowntime + savedRework;
+  const estimatedDigitalCost = Math.round(projectBudget * 0.08); // 數位建置費約 8%
+  const netBenefit = totalAnnualBenefit - estimatedDigitalCost;
+  const roiMultiple = ((totalAnnualBenefit / estimatedDigitalCost)).toFixed(1);
 
   return (
-    <section id="roi-impact" className="py-20 relative">
+    <section id="roi-impact" className="py-20 relative bg-[#070D1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="投資報酬與價值量化"
-          slideTag="Slide 15 / 20"
-          title="重大效益量化："
-          gradientText="為台船創造的真實價值"
-          subtitle="我們協助台蝕向台船決策層展示「投入 1 元，收穫多重實質利益」的頂級投報藍圖，將工程支出轉化為高額風險防護與商譽溢價！"
+          badge="量化成效"
+          slideTag="財務回報與管理指標"
+          title="重大效益量化與"
+          gradientText="互動式投資回報 (ROI) 試算"
+          subtitle="導入 BIM 數位雙生與施工風險治理，不僅消除現場重工與工程糾紛，更能大幅降低非預期停工損失！"
         />
 
-        {/* 4 Big Metric Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* 4 Quantified Metric Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {QUANTIFIED_ROI.map((roi, idx) => (
             <div
               key={idx}
-              className={`p-6 sm:p-8 rounded-3xl bg-[#091129]/90 border border-white/10 backdrop-blur-2xl text-center space-y-4 hover:border-ocean-400/50 hover:scale-105 transition-all duration-300 ${roi.glow}`}
+              className="p-6 rounded-2xl bg-marine-900/70 border border-white/10 text-center space-y-2 flex flex-col justify-between"
             >
-              <span className={`text-4xl sm:text-5xl font-black font-mono tracking-tight bg-gradient-to-r ${roi.color} bg-clip-text text-transparent block`}>
-                {roi.metric}
-              </span>
-              <h3 className="text-lg font-bold text-white leading-tight">
-                {roi.label}
-              </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <div>
+                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-ocean-400 block tracking-tight">
+                  {roi.metric}
+                </span>
+                <h4 className="text-sm font-bold text-white mt-1">{roi.label}</h4>
+              </div>
+              <p className="text-xs text-marine-300 leading-relaxed pt-2 border-t border-white/5">
                 {roi.desc}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Interactive CAPEX ROI Simulator */}
-        <div className="rounded-3xl p-6 sm:p-10 bg-gradient-to-b from-[#0C1736] to-[#070D1E] border border-esg-500/30 shadow-glow-esg backdrop-blur-2xl">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10 mb-8">
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-2xl bg-esg-500/20 text-esg-300">
-                <Calculator className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-esg-400 block">
-                  互動式試算器 (Interactive ROI Simulator)
-                </span>
-                <h4 className="text-xl sm:text-2xl font-black text-white">
-                  港灣資產升級投報效益試算
-                </h4>
-              </div>
+        {/* Interactive ROI Calculator Card */}
+        <div className="rounded-2xl p-6 sm:p-8 bg-marine-900/80 border border-white/10 max-w-4xl mx-auto space-y-6">
+          <div className="flex items-center gap-3 pb-4 border-b border-white/5">
+            <div className="p-2.5 rounded-xl bg-marine-950 text-ocean-400 border border-white/5">
+              <Calculator className="w-5 h-5" />
             </div>
-            <div className="text-xs font-mono text-slate-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
-              公式模型：IFRS S2 未修復預期損失折算法
+            <div>
+              <h3 className="text-lg font-bold text-white">專案 CAPEX 投資回報率 (ROI) 即時試算器</h3>
+              <p className="text-xs text-marine-400">拖動滑桿調整工程總預算與年度停工風險估計</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Sliders Control (7 cols) */}
-            <div className="lg:col-span-7 space-y-6">
-              {/* Slider 1: Project Budget */}
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs sm:text-sm font-mono">
-                  <span className="text-slate-300">標的工程總預算（CAPEX）：</span>
-                  <span className="text-ocean-300 font-bold">NT$ {projectBudget.toLocaleString()} 萬元</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Left Sliders */}
+            <div className="space-y-5">
+              <div>
+                <div className="flex justify-between text-xs font-mono mb-1.5">
+                  <span className="text-marine-300 font-medium">預計工程總預算 (CAPEX)：</span>
+                  <span className="text-ocean-400 font-bold">NT$ {projectBudget} 萬元</span>
                 </div>
                 <input
                   type="range"
@@ -83,85 +73,61 @@ export const RoiMetricCards: React.FC = () => {
                   max="20000"
                   step="500"
                   value={projectBudget}
-                  onChange={e => setProjectBudget(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-ocean-400"
+                  onChange={(e) => setProjectBudget(Number(e.target.value))}
+                  className="w-full h-1.5 bg-marine-950 rounded-lg appearance-none cursor-pointer accent-ocean-500"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-slate-500">
-                  <span>NT$ 1,000 萬</span>
-                  <span>NT$ 20,000 萬 (2億)</span>
-                </div>
               </div>
 
-              {/* Slider 2: Annual Downtime Loss Risk */}
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs sm:text-sm font-mono">
-                  <span className="text-slate-300">未預警事故潛在停工損失估算：</span>
-                  <span className="text-sun-300 font-bold">NT$ {downtimeLossEstimate.toLocaleString()} 萬元 / 次</span>
+              <div>
+                <div className="flex justify-between text-xs font-mono mb-1.5">
+                  <span className="text-marine-300 font-medium">船塢/碼頭年度潛在停工損失：</span>
+                  <span className="text-sand-300 font-bold">NT$ {annualDowntimeRisk} 萬元</span>
                 </div>
                 <input
                   type="range"
                   min="500"
                   max="10000"
-                  step="250"
-                  value={downtimeLossEstimate}
-                  onChange={e => setDowntimeLossEstimate(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-sun-400"
+                  step="500"
+                  value={annualDowntimeRisk}
+                  onChange={(e) => setAnnualDowntimeRisk(Number(e.target.value))}
+                  className="w-full h-1.5 bg-marine-950 rounded-lg appearance-none cursor-pointer accent-sand-400"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-slate-500">
-                  <span>NT$ 500 萬</span>
-                  <span>NT$ 10,000 萬 (1億)</span>
-                </div>
               </div>
 
-              {/* Slider 3: Design Conflict & Rework Factor */}
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs sm:text-sm font-mono">
-                  <span className="text-slate-300">傳統管線衝突二次重工風險率：</span>
-                  <span className="text-purple-300 font-bold">{reworkRiskPercent} %</span>
-                </div>
-                <input
-                  type="range"
-                  min="5"
-                  max="40"
-                  step="1"
-                  value={reworkRiskPercent}
-                  onChange={e => setReworkRiskPercent(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-purple-400"
-                />
-                <div className="flex justify-between text-[10px] font-mono text-slate-500">
-                  <span>5% (低衝突)</span>
-                  <span>40% (高機電複雜度)</span>
-                </div>
+              <div className="p-3 rounded-lg bg-marine-950/60 text-xs text-marine-400 leading-relaxed font-mono">
+                💡 試算依據：以預警降低 40% 停工損失、BIM 淨空檢核減少 4% 重工拆改費、數位治理專案服務費約佔工程款 8% 計算。
               </div>
             </div>
 
-            {/* Calculated Output Box (5 cols) */}
-            <div className="lg:col-span-5 p-6 rounded-2xl bg-black/50 border border-esg-500/40 text-center space-y-4">
-              <span className="text-xs font-mono text-esg-400 uppercase font-bold tracking-wider block">
-                預估綜合避險與節省效益總額
-              </span>
-
-              <div className="p-4 rounded-xl bg-esg-950/40 border border-esg-500/30">
-                <span className="text-4xl sm:text-5xl font-black font-mono text-esg-300 tracking-tight block">
-                  NT$ {totalBenefit.toLocaleString()} 萬
-                </span>
-                <span className="text-xs text-slate-300 font-mono mt-1 block">
-                  預估投報乘數：<strong className="text-ocean-300 font-bold">{roiMultiplier} 倍</strong>
-                </span>
+            {/* Right Calculated Results */}
+            <div className="rounded-xl p-5 bg-marine-950/80 border border-white/5 flex flex-col justify-between space-y-4">
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between py-1 border-b border-white/5">
+                  <span className="text-marine-400">停工損失避免效益：</span>
+                  <span className="text-white font-mono font-bold">+ NT$ {savedDowntime} 萬元 / 年</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-white/5">
+                  <span className="text-marine-400">施工重工減少效益：</span>
+                  <span className="text-white font-mono font-bold">+ NT$ {savedRework} 萬元</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-white/5">
+                  <span className="text-marine-400">預估數位治理投資費：</span>
+                  <span className="text-sand-300 font-mono">- NT$ {estimatedDigitalCost} 萬元</span>
+                </div>
               </div>
 
-              <div className="space-y-2 text-left text-xs font-mono text-slate-300">
-                <div className="flex justify-between p-2 rounded bg-white/5">
-                  <span>📉 提早預警避免停工損失：</span>
-                  <span className="text-esg-300 font-bold">約 +{savedDowntime.toLocaleString()} 萬元</span>
+              <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+                <div>
+                  <span className="text-[11px] font-mono text-marine-400 block uppercase">首年淨效益</span>
+                  <span className="text-2xl font-bold font-mono text-sage-300">
+                    + NT$ {netBenefit} 萬元
+                  </span>
                 </div>
-                <div className="flex justify-between p-2 rounded bg-white/5">
-                  <span>🔧 BIM 碰撞消除重工成本：</span>
-                  <span className="text-ocean-300 font-bold">約 +{savedRework.toLocaleString()} 萬元</span>
-                </div>
-                <div className="flex justify-between p-2 rounded bg-white/5">
-                  <span>🌱 IFRS S1/S2 審計確信評等：</span>
-                  <span className="text-purple-300 font-bold">100% 審計合規</span>
+                <div className="text-right">
+                  <span className="text-[11px] font-mono text-marine-400 block uppercase">預期投資回報</span>
+                  <span className="text-2xl font-bold font-mono text-ocean-400">
+                    {roiMultiple} 倍
+                  </span>
                 </div>
               </div>
             </div>

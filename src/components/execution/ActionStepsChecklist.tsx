@@ -1,112 +1,108 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { ACTION_STEPS } from '../../data/proposalData';
+import { CheckCircle2, Circle, ArrowRight, Sparkles, Send } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { CheckCircle2, Circle, Sparkles, Send, Award, ArrowRight, Flag } from 'lucide-react';
 
 export const ActionStepsChecklist: React.FC = () => {
-  const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+  const [checkedSteps, setCheckedSteps] = useState<Record<number, boolean>>({
+    1: true,
+    2: false,
+    3: false
+  });
 
   const toggleStep = (stepNum: number) => {
-    if (completedSteps.includes(stepNum)) {
-      setCompletedSteps(completedSteps.filter(s => s !== stepNum));
-    } else {
-      const next = [...completedSteps, stepNum];
-      setCompletedSteps(next);
-      if (next.length === ACTION_STEPS.length) {
-        confetti({
-          particleCount: 120,
-          spread: 70,
-          origin: { y: 0.6 }
-        });
-      }
+    const nextState = {
+      ...checkedSteps,
+      [stepNum]: !checkedSteps[stepNum]
+    };
+    setCheckedSteps(nextState);
+
+    // Trigger subtle confetti if all steps checked
+    if (Object.values(nextState).every(Boolean)) {
+      confetti({
+        particleCount: 50,
+        spread: 60,
+        origin: { y: 0.8 },
+        colors: ['#38BDF8', '#0284C7', '#10B981']
+      });
     }
   };
 
   return (
-    <section id="action-steps" className="py-20 relative">
+    <section id="action-steps" className="py-20 relative bg-[#070D1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="結論與推進"
-          slideTag="Slide 20 / 20"
-          title="結論與近期"
-          gradientText="具體推進三步驟（Next Steps）"
-          subtitle="目標：成為台灣第一家兼具「重防蝕技術、BIM 港灣數位雙生、上市 ESG 合規」的智慧海洋工程先鋒！"
+          badge="結論與行動"
+          slideTag="近期三大推進步驟"
+          title="推動港灣工程升級："
+          gradientText="近期具體推進三步驟"
+          subtitle="低風險啟動，以「五大前提釐清 ➔ 閉門戰略演練 ➔ 正式提報董事會」三步走，爭取首批示範案！"
         />
 
-        {/* 3 Action Steps Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {ACTION_STEPS.map(act => {
-            const isDone = completedSteps.includes(act.step);
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+          {ACTION_STEPS.map((step) => {
+            const isChecked = checkedSteps[step.step];
             return (
               <div
-                key={act.step}
-                onClick={() => toggleStep(act.step)}
-                className={`p-6 sm:p-8 rounded-3xl border backdrop-blur-2xl cursor-pointer transition-all duration-300 flex flex-col justify-between space-y-6 ${
-                  isDone
-                    ? 'bg-[#0A2438] border-esg-400 shadow-glow-esg'
-                    : 'bg-[#080E21]/90 border-white/10 hover:border-ocean-400/40 hover:-translate-y-1'
+                key={step.step}
+                onClick={() => toggleStep(step.step)}
+                className={`p-6 rounded-2xl border cursor-pointer transition-all duration-200 flex flex-col justify-between space-y-5 ${
+                  isChecked
+                    ? 'bg-marine-900/90 border-sage-500/50 shadow-card-clean'
+                    : 'bg-marine-950/60 border-white/5 hover:border-white/10'
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
-                    <span className="px-3 py-1 rounded-full bg-ocean-500/20 text-ocean-300 text-xs font-mono font-bold">
-                      步驟 0{act.step} ｜ {act.timeframe}
+                  <div className="flex items-center justify-between pb-3 border-b border-white/5">
+                    <span className="text-xs font-mono font-medium text-ocean-400">
+                      步驟 0{step.step} ｜ {step.timeframe}
                     </span>
                     <button className="text-slate-400 hover:text-white">
-                      {isDone ? (
-                        <CheckCircle2 className="w-6 h-6 text-esg-400" />
+                      {isChecked ? (
+                        <CheckCircle2 className="w-5 h-5 text-sage-400" />
                       ) : (
-                        <Circle className="w-6 h-6 text-slate-500" />
+                        <Circle className="w-5 h-5 text-marine-600" />
                       )}
                     </button>
                   </div>
 
-                  <h3 className="text-xl font-black text-white leading-tight">
-                    {act.title}
-                  </h3>
+                  <h4 className="text-base font-bold text-white mt-3 leading-snug">
+                    {step.title}
+                  </h4>
 
-                  <div className="mt-3 text-xs font-mono text-ocean-300 font-bold">
-                    負責主體：{act.owner}
+                  <div className="mt-2 text-xs font-mono text-sand-300">
+                    主責：{step.owner}
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-3">
-                    {act.description}
+                  <p className="text-xs text-marine-300 leading-relaxed mt-2">
+                    {step.description}
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-black/40 border border-white/5 space-y-1 text-xs font-mono">
-                  <span className="text-[10px] text-slate-400 uppercase font-bold block">成果產出：</span>
-                  <span className="text-esg-300 font-bold">{act.deliverable}</span>
+                <div className="p-3 rounded-xl bg-marine-950/80 border border-white/5 text-xs text-sage-300 font-mono">
+                  成果：{step.deliverable}
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Grand CTA Banner */}
-        <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-[#0C1B3D] via-[#10274B] to-[#0A303A] border border-ocean-500/40 shadow-glow-ocean text-center max-w-4xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-esg-500/20 text-esg-300 border border-esg-500/30 text-xs font-mono font-bold">
-            <Sparkles className="w-4 h-4" /> 啟動首批示範案
-          </div>
-
-          <h3 className="text-2xl sm:text-4xl font-black text-white leading-snug">
-            攜手台蝕 × 中科大 × 環會協會
-            <br />
-            共同開創台灣海洋工程數位永續新紀元！
+        {/* Action Completion Status Card */}
+        <div className="rounded-2xl p-6 sm:p-8 bg-marine-900/80 border border-white/10 max-w-3xl mx-auto text-center space-y-4">
+          <h3 className="text-lg font-bold text-white">
+            攜手成為台灣第一家兼具「重防蝕 ＋ BIM 數位雙生 ＋ 上市 ESG 治理」的港灣工程先鋒！
           </h3>
-
-          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            立即敲定首批示範案：<strong className="text-white">「小塢先導位移監測 ＋ 海軍新庫房智慧加值」</strong>，以最低風險快速啟動，奠定長期長約定價權！
+          <p className="text-xs sm:text-sm text-marine-300 max-w-xl mx-auto leading-relaxed">
+            我們已完成全套展示模型與簡報素材，隨時可配合台蝕團隊啟動五大前提協調與閉門戰略演練。
           </p>
-
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+          <div className="pt-2">
             <a
-              href="mailto:contact@csbs.kuo.cc.cd"
-              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-esg-500 to-ocean-500 text-slate-950 font-black text-sm hover:brightness-110 shadow-glow-esg hover:scale-105 transition-all flex items-center gap-2"
+              href="mailto:contact@csbs.kkuo.cc.cd"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold bg-ocean-600 hover:bg-ocean-500 text-white shadow-card-clean transition-all"
             >
               <Send className="w-4 h-4" />
-              <span>發起閉門戰略演練會議</span>
+              <span>聯繫聯合團隊啟動首期協調</span>
             </a>
           </div>
         </div>

@@ -3,51 +3,47 @@ import { Badge } from './Badge';
 
 interface SectionHeadingProps {
   badge?: string;
-  badgeVariant?: 'cyan' | 'emerald' | 'purple' | 'amber' | 'rose' | 'slate';
   slideTag?: string;
   title: string;
-  subtitle?: string;
   gradientText?: string;
+  subtitle?: string;
   align?: 'left' | 'center';
-  className?: string;
 }
 
 export const SectionHeading: React.FC<SectionHeadingProps> = ({
   badge,
-  badgeVariant = 'cyan',
   slideTag,
   title,
-  subtitle,
   gradientText,
-  align = 'center',
-  className = ''
+  subtitle,
+  align = 'center'
 }) => {
   return (
-    <div
-      className={`mb-12 md:mb-16 ${
-        align === 'center' ? 'text-center max-w-4xl mx-auto' : 'max-w-3xl'
-      } ${className}`}
-    >
-      <div className={`flex items-center gap-3 mb-4 ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
-        {badge && <Badge variant={badgeVariant}>{badge}</Badge>}
-        {slideTag && (
-          <span className="text-xs font-mono font-bold tracking-wider px-2.5 py-0.5 rounded bg-white/5 text-slate-400 border border-white/10">
-            {slideTag}
-          </span>
-        )}
-      </div>
+    <div className={`mb-12 ${align === 'center' ? 'text-center max-w-4xl mx-auto' : 'max-w-3xl'}`}>
+      {(badge || slideTag) && (
+        <div className={`flex items-center gap-2 mb-3.5 ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
+          {badge && (
+            <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-ocean-950/70 text-ocean-300 border border-ocean-800/50">
+              {badge}
+            </span>
+          )}
+          {slideTag && (
+            <span className="px-2.5 py-1 rounded-md text-[11px] font-mono text-marine-400 bg-marine-900/60 border border-marine-800/50">
+              {slideTag}
+            </span>
+          )}
+        </div>
+      )}
 
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
         {title}{' '}
         {gradientText && (
-          <span className="gradient-text-rainbow block sm:inline mt-1 sm:mt-0">
-            {gradientText}
-          </span>
+          <span className="gradient-text-ocean font-extrabold">{gradientText}</span>
         )}
       </h2>
 
       {subtitle && (
-        <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+        <p className="mt-3.5 text-sm sm:text-base text-marine-300 leading-relaxed max-w-3xl mx-auto">
           {subtitle}
         </p>
       )}

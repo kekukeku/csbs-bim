@@ -1,186 +1,171 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
-import { GlowCard } from '../ui/GlowCard';
 import { MICROGRID_DATA } from '../../data/proposalData';
-import { Zap, ShieldCheck, Sun, BatteryCharging, AlertTriangle, ArrowRight, CheckCircle2, Lock, Radio, Info } from 'lucide-react';
+import { Zap, ShieldCheck, Sun, Lock, Info } from 'lucide-react';
 
 export const MicrogridSection: React.FC = () => {
   const [gridMode, setGridMode] = useState<'normal' | 'wartime'>('normal');
 
   return (
-    <section id="microgrid" className="py-20 relative bg-gradient-to-b from-transparent via-[#091128]/70 to-transparent">
+    <section id="microgrid" className="py-20 relative bg-[#070D1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="六大升級亮點 05"
-          slideTag="選項服務 ｜ 嚴守履約邊界"
+          badge="選項服務"
+          slideTag="能源管理與平戰轉換"
           title="務實調整綠能儲能邊界："
           gradientText="平戰轉換與儲能安全（選項服務）"
           subtitle="誠實揭露戰備儲能與微電網受限於海軍國防部核准、防火避難綜合檢討與涉密資安審查等前提，列為【選項服務】，未經業主核准前不具履約義務，避免未審先承諾！"
         />
 
-        {/* Boundary Notice Ribbon */}
-        <div className="mb-10 p-6 rounded-3xl bg-sun-950/30 border border-sun-500/40 backdrop-blur-xl max-w-4xl mx-auto flex items-start gap-4">
-          <div className="p-3 rounded-2xl bg-sun-500/20 text-sun-300 shrink-0 mt-0.5">
-            <Info className="w-6 h-6" />
+        {/* Boundary Notice Banner */}
+        <div className="mb-8 p-5 rounded-2xl bg-marine-900/80 border border-white/10 max-w-4xl mx-auto flex items-start gap-3.5">
+          <div className="p-2 rounded-lg bg-marine-950 text-sand-400 border border-sand-800/40 shrink-0 mt-0.5">
+            <Info className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-sun-400 block mb-1">
-              【履約責任邊界澄清】：
+            <span className="text-xs font-mono font-semibold text-sand-300 block mb-0.5">
+              【履約責任邊界澄清】
             </span>
-            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            <p className="text-xs text-marine-300 leading-relaxed">
               {MICROGRID_DATA.boundaryNotice}
             </p>
           </div>
         </div>
 
         {/* Interactive Mode Switcher */}
-        <div className="flex justify-center mb-10">
-          <div className="inline-flex p-1.5 rounded-2xl bg-slate-900/90 border border-white/10 backdrop-blur-xl">
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex p-1 rounded-xl bg-marine-900/90 border border-white/10">
             <button
               onClick={() => setGridMode('normal')}
-              className={`px-6 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
+              className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
                 gridMode === 'normal'
-                  ? 'bg-gradient-to-r from-esg-500 to-ocean-500 text-slate-950 shadow-glow-esg'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-sage-600 text-white shadow-card-clean'
+                  : 'text-marine-400 hover:text-white'
               }`}
             >
-              <Sun className="w-4 h-4" />
+              <Sun className="w-3.5 h-3.5" />
               平時模式（節能減碳・削峰填谷）
             </button>
             <button
               onClick={() => setGridMode('wartime')}
-              className={`px-6 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
+              className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
                 gridMode === 'wartime'
-                  ? 'bg-gradient-to-r from-fire-500 to-amber-500 text-white shadow-glow-fire animate-pulse'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-ocean-600 text-white shadow-card-clean'
+                  : 'text-marine-400 hover:text-white'
               }`}
             >
-              <ShieldCheck className="w-4 h-4" />
+              <ShieldCheck className="w-3.5 h-3.5" />
               戰時模式（72h 緊急孤島運轉）
             </button>
           </div>
         </div>
 
         {/* Dynamic Mode Display */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Left Column: Non-Red Supply Chain Shield (5 cols) */}
-          <div className="lg:col-span-5 space-y-6 flex flex-col justify-between">
-            <GlowCard glowColor="cyan" className="space-y-4">
-              <div className="flex items-center gap-3 pb-3 border-b border-white/10">
-                <div className="p-2.5 rounded-xl bg-ocean-500/20 text-ocean-300">
-                  <Lock className="w-6 h-6" />
+          <div className="lg:col-span-5 space-y-4 flex flex-col justify-between">
+            <div className="p-6 rounded-2xl bg-marine-900/70 border border-white/10 space-y-4">
+              <div className="flex items-center gap-3 pb-3 border-b border-white/5">
+                <div className="p-2 rounded-lg bg-marine-950 text-ocean-400 border border-white/5">
+                  <Lock className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono text-ocean-400 uppercase font-bold">國防資安審查</span>
-                    <span className="text-[10px] font-mono bg-sun-500/20 text-sun-300 px-2 py-0.5 rounded border border-sun-500/30 font-bold">選項服務</span>
+                    <span className="text-[10px] font-mono text-marine-400 uppercase font-medium">國防資安審查</span>
+                    <span className="text-[10px] font-mono bg-marine-800 text-sand-300 px-1.5 py-0.5 rounded">選項服務</span>
                   </div>
-                  <h4 className="text-lg font-bold text-white mt-0.5">非紅色供應鏈（100% 國安合規）</h4>
+                  <h4 className="text-base font-bold text-white mt-0.5">非紅色供應鏈（國安合規）</h4>
                 </div>
               </div>
 
-              <div className="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
-                  <strong className="text-white block">🔋 UL9540A 國際防爆認證：</strong>
-                  若經海軍核准，採用通過最嚴苛燃燒測試之非中資磷酸鐵鋰（LFP）電芯，或台泥儲能（NHOA）/長園科等在地製造高安全性電池組。
+              <div className="space-y-2.5 text-xs text-marine-300 leading-relaxed">
+                <div className="p-3 rounded-lg bg-marine-950/80 border border-white/5 space-y-0.5">
+                  <strong className="text-slate-200 block font-semibold">🔋 UL9540A 國際防爆認證：</strong>
+                  若經海軍核准，採用通過最嚴苛燃燒測試之非中資磷酸鐵鋰（LFP）電芯，或在地製造高安全性電池組。
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
-                  <strong className="text-white block">🛡️ BMS 與逆變器資安防護：</strong>
-                  全面採用臺灣、美日系通訊協定，嚴禁任何遠端雲端回傳大陸伺服器疑慮，符合海軍機敏廠區資安審查。
+                <div className="p-3 rounded-lg bg-marine-950/80 border border-white/5 space-y-0.5">
+                  <strong className="text-slate-200 block font-semibold">🛡️ BMS 與逆變器資安防護：</strong>
+                  全面採用臺灣、美日系通訊協定，嚴禁任何遠端雲端回傳大陸伺服器疑慮。
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-esg-500/10 border border-esg-500/30 text-xs text-esg-300 font-medium">
+              <div className="p-2.5 rounded-lg bg-sage-950/40 border border-sage-800/40 text-xs text-sage-300 font-medium">
                 ✔ 需經國防部與海軍專案正式核定後由外購專業統包商施作
               </div>
-            </GlowCard>
+            </div>
           </div>
 
           {/* Right Column: Grid Simulation & Flow (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between">
-            <div
-              className={`rounded-3xl p-6 sm:p-8 border backdrop-blur-2xl transition-all duration-300 h-full flex flex-col justify-between ${
-                gridMode === 'normal'
-                  ? 'bg-[#0A1633]/90 border-esg-500/30 shadow-glow-esg'
-                  : 'bg-[#1A0B1A]/90 border-fire-500/40 shadow-glow-fire'
-              }`}
-            >
+            <div className="rounded-2xl p-6 border bg-marine-900/70 border-white/10 h-full flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`px-3 py-1 rounded-full text-xs font-mono font-bold uppercase ${
-                        gridMode === 'normal'
-                          ? 'bg-esg-500/20 text-esg-300'
-                          : 'bg-fire-500/20 text-fire-300'
-                      }`}
-                    >
-                      {gridMode === 'normal' ? 'MODE: PEACETIME (NORMAL)' : 'MODE: ISLAND OPERATION (WAR)'}
-                    </span>
-                  </div>
-                  <span className="text-xs font-mono text-slate-400">
+                <div className="flex items-center justify-between pb-3 border-b border-white/5">
+                  <span className="px-2.5 py-0.5 rounded text-xs font-mono font-medium bg-marine-950 text-ocean-300 border border-white/5">
+                    {gridMode === 'normal' ? 'MODE: PEACETIME (NORMAL)' : 'MODE: ISLAND OPERATION (WAR)'}
+                  </span>
+                  <span className="text-xs font-mono text-marine-400">
                     {gridMode === 'normal' ? '外部電網正常' : '外部電網中斷'}
                   </span>
                 </div>
 
                 {gridMode === 'normal' ? (
-                  <div className="mt-6 space-y-4 animate-fadeIn">
-                    <h3 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-                      <Sun className="w-6 h-6 text-sun-400" />
+                  <div className="mt-5 space-y-4 animate-fadeIn">
+                    <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+                      <Sun className="w-5 h-5 text-sand-400" />
                       屋頂光電自發自用 ＋ 削峰填谷省電費
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                      庫房與廠房屋頂太陽能板全量自發自用。於夜間離峰低費率充電、日間尖峰高電價放電，大幅降低台船高昂契約容量罰款。
+                    <p className="text-xs sm:text-sm text-marine-300 leading-relaxed">
+                      庫房與廠房屋頂太陽能板全量自發自用。夜間離峰充電、日間尖峰放電，降低台船契約容量罰款。
                     </p>
 
-                    {/* Flow Diagram */}
-                    <div className="grid grid-cols-3 gap-2.5 my-6 text-center text-xs font-mono">
-                      <div className="p-3 rounded-xl bg-black/40 border border-sun-500/30">
-                        <span className="text-sun-400 block mb-1">☀️ 太陽光電</span>
-                        <span className="text-white font-bold">100% 自發自用</span>
+                    {/* Clean Flow Grid */}
+                    <div className="grid grid-cols-3 gap-2.5 my-4 text-center text-xs font-mono">
+                      <div className="p-2.5 rounded-lg bg-marine-950/80 border border-white/5">
+                        <span className="text-sand-400 block text-[11px] mb-0.5">☀️ 太陽光電</span>
+                        <span className="text-white font-semibold">自發自用</span>
                       </div>
-                      <div className="p-3 rounded-xl bg-black/40 border border-ocean-500/30">
-                        <span className="text-ocean-400 block mb-1">🔋 儲能電池</span>
-                        <span className="text-white font-bold">離峰充 / 尖峰放</span>
+                      <div className="p-2.5 rounded-lg bg-marine-950/80 border border-white/5">
+                        <span className="text-ocean-400 block text-[11px] mb-0.5">🔋 儲能電池</span>
+                        <span className="text-white font-semibold">離峰充/尖峰放</span>
                       </div>
-                      <div className="p-3 rounded-xl bg-black/40 border border-esg-500/30">
-                        <span className="text-esg-400 block mb-1">📉 契約容量</span>
-                        <span className="text-white font-bold">年省數百萬</span>
+                      <div className="p-2.5 rounded-lg bg-marine-950/80 border border-white/5">
+                        <span className="text-sage-400 block text-[11px] mb-0.5">📉 契約容量</span>
+                        <span className="text-white font-semibold">降低超約費用</span>
                       </div>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-esg-950/40 border border-esg-500/30 text-xs text-esg-200">
+                    <div className="p-3 rounded-lg bg-sage-950/40 border border-sage-800/40 text-xs text-sage-300">
                       <strong>ESG 成果：</strong>隨標單產出真實發電與節電憑據，供台船永續部列入 ESG 範疇二減碳實績。
                     </div>
                   </div>
                 ) : (
-                  <div className="mt-6 space-y-4 animate-fadeIn">
-                    <h3 className="text-xl sm:text-2xl font-black text-fire-300 flex items-center gap-2">
-                      <ShieldCheck className="w-6 h-6 text-fire-400" />
+                  <div className="mt-5 space-y-4 animate-fadeIn">
+                    <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+                      <ShieldCheck className="w-5 h-5 text-ocean-400" />
                       20ms 瞬間切換孤島運轉 ｜ 72 小時連續戰備
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-marine-300 leading-relaxed">
                       外部電網中斷時，微電網在 20 毫秒內瞬間接管，優先保證潛艦機敏庫房與船塢排水系統連續 72 小時不斷電運作！
                     </p>
 
                     {/* Island Mode Key Priorities */}
-                    <div className="grid grid-cols-3 gap-2.5 my-6 text-center text-xs font-mono">
-                      <div className="p-3 rounded-xl bg-fire-950/50 border border-fire-500/30">
-                        <span className="text-fire-400 block mb-1">💨 潛艦防爆排風</span>
-                        <span className="text-white font-bold">24/7 不中斷</span>
+                    <div className="grid grid-cols-3 gap-2.5 my-4 text-center text-xs font-mono">
+                      <div className="p-2.5 rounded-lg bg-marine-950/80 border border-white/5">
+                        <span className="text-ocean-400 block text-[11px] mb-0.5">💨 潛艦防爆排風</span>
+                        <span className="text-white font-semibold">24/7 不中斷</span>
                       </div>
-                      <div className="p-3 rounded-xl bg-fire-950/50 border border-fire-500/30">
-                        <span className="text-fire-400 block mb-1">💧 船塢排水泵</span>
-                        <span className="text-white font-bold">持續抽排防淹</span>
+                      <div className="p-2.5 rounded-lg bg-marine-950/80 border border-white/5">
+                        <span className="text-ocean-400 block text-[11px] mb-0.5">💧 船塢排水泵</span>
+                        <span className="text-white font-semibold">持續抽排防淹</span>
                       </div>
-                      <div className="p-3 rounded-xl bg-fire-950/50 border border-fire-500/30">
-                        <span className="text-fire-400 block mb-1">🛡️ 機敏通訊資安</span>
-                        <span className="text-white font-bold">獨立封閉運行</span>
+                      <div className="p-2.5 rounded-lg bg-marine-950/80 border border-white/5">
+                        <span className="text-ocean-400 block text-[11px] mb-0.5">🛡️ 機敏通訊資安</span>
+                        <span className="text-white font-semibold">獨立封閉運行</span>
                       </div>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-fire-950/40 border border-fire-500/40 text-xs text-fire-200">
+                    <div className="p-3 rounded-lg bg-ocean-950/40 border border-ocean-800/40 text-xs text-ocean-300">
                       <strong>國安戰略價值：</strong>經海軍核准建置後，展現國安級戰備防護能力，為爭取後續軍艦維保奠定基礎。
                     </div>
                   </div>

@@ -1,68 +1,64 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { RISK_QNA } from '../../data/proposalData';
-import { HelpCircle, ChevronDown, ChevronUp, Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { HelpCircle, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 
 export const RiskQnAAccordion: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const toggleIndex = (idx: number) => {
-    setOpenIndex(openIndex === idx ? null : idx);
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="py-20 relative bg-gradient-to-b from-transparent via-[#091128]/60 to-transparent">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-20 relative bg-[#0A0F1D]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="疑慮與風險應對"
-          slideTag="Slide 19 / 20"
-          title="常見疑慮與應對："
-          gradientText="專業解法 Q&A"
-          subtitle="針對採購追加預算、惡劣鹽霧水下感測器耐用度與台船傳統比價砍價三大實務挑戰，提出具備完全說服力之解套方案！"
+          badge="實務疑慮解答"
+          slideTag="風險防禦手冊"
+          title="常見實務疑慮與"
+          gradientText="專業應對策略 (Q&A)"
+          subtitle="針對預算追加、感測器海洋鹽霧耐久度、及採購比價防禦策略的完整解答。"
         />
 
-        <div className="space-y-4">
-          {RISK_QNA.map((item, idx) => {
-            const isOpen = openIndex === idx;
+        <div className="max-w-4xl mx-auto space-y-3">
+          {RISK_QNA.map((item, index) => {
+            const isOpen = openIndex === index;
             return (
               <div
-                key={idx}
-                className={`rounded-3xl border backdrop-blur-2xl transition-all duration-300 overflow-hidden ${
+                key={index}
+                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'bg-[#0E1E42]/90 border-ocean-400 shadow-glow-ocean'
-                    : 'bg-[#080E21]/80 border-white/10 hover:border-white/20'
+                    ? 'bg-marine-900/90 border-ocean-500/30 shadow-card-clean'
+                    : 'bg-marine-950/60 border-white/5 hover:border-white/10'
                 }`}
               >
                 <button
-                  onClick={() => toggleIndex(idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4"
+                  onClick={() => toggleAccordion(index)}
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4"
                 >
-                  <div className="flex items-center gap-3.5">
-                    <span className="w-8 h-8 rounded-xl bg-ocean-500/20 text-ocean-300 font-black font-mono flex items-center justify-center text-sm shrink-0 border border-ocean-500/30">
-                      Q{idx + 1}
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-lg bg-marine-800 text-ocean-400 text-xs font-mono font-bold flex items-center justify-center shrink-0">
+                      Q{index + 1}
                     </span>
-                    <span className="text-base sm:text-lg font-bold text-white leading-snug">
+                    <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
                       {item.question}
-                    </span>
+                    </h3>
                   </div>
-                  <div className="p-2 rounded-xl bg-white/5 text-slate-400 shrink-0">
-                    {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+
+                  <div className="p-1 rounded-lg bg-white/5 text-marine-400 shrink-0">
+                    {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 border-t border-white/10 space-y-4 animate-fadeIn">
-                    <div className="p-4 rounded-2xl bg-black/40 border border-white/5 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                      <strong className="text-white block mb-1">聯合團隊專業解答：</strong>
+                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 space-y-3 animate-fadeIn">
+                    <div className="p-4 rounded-xl bg-marine-950/80 border border-white/5 text-xs sm:text-sm text-marine-300 leading-relaxed">
                       {item.answer}
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-esg-950/40 border border-esg-500/30 text-xs sm:text-sm text-esg-200 flex items-start gap-2.5 font-medium">
-                      <Sparkles className="w-4 h-4 text-esg-400 shrink-0 mt-0.5" />
-                      <div>
-                        <strong className="text-white block font-mono text-xs">破局核心亮點：</strong>
-                        {item.highlight}
-                      </div>
+                    <div className="p-3 rounded-lg bg-sage-950/40 border border-sage-800/40 text-xs text-sage-300 font-medium">
+                      💡 核心要點：{item.highlight}
                     </div>
                   </div>
                 )}

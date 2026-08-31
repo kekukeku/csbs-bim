@@ -362,57 +362,57 @@ export const Shipyard3DSimulator: React.FC = () => {
   };
 
   return (
-    <div className="rounded-3xl bg-[#090F22]/90 border border-ocean-500/20 p-6 sm:p-8 shadow-2xl backdrop-blur-2xl">
+    <div className="rounded-2xl bg-marine-900/80 border border-white/10 p-6 shadow-subtle backdrop-blur-md">
       {/* Header & Simulation Mode Controls */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/10">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-white/5">
         <div>
-          <div className="flex items-center gap-2 mb-2">
-            <span className="flex h-3 w-3 relative">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="flex h-2.5 w-2.5 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ocean-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-ocean-500"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-ocean-500"></span>
             </span>
-            <span className="text-xs font-mono text-ocean-300 font-bold uppercase tracking-widest">
-              Live BIM Digital Twin Sandbox
+            <span className="text-[11px] font-mono text-ocean-400 font-semibold uppercase tracking-wider">
+              BIM 數位雙生現場模擬
             </span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-3">
-            <Activity className="w-6 h-6 text-ocean-400" />
+          <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+            <Activity className="w-5 h-5 text-ocean-400" />
             台船港灣數位雙生 × 現場 Sensor 即時模擬平臺
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300 mt-1">
-            點擊下方節點或切換「綠/黃/紅」三色預警演算法，體驗中科大 3D Web 輕量化監測與自動化通報流程
+          <p className="text-xs text-marine-300 mt-0.5">
+            點擊下方節點或切換「綠/黃/紅」三色預警演算法，體驗 3D Web 輕量化監測與自動化通報流程
           </p>
         </div>
 
         {/* Simulation Triggers */}
-        <div className="flex flex-wrap items-center gap-2.5 bg-slate-900/80 p-2 rounded-xl border border-white/10">
-          <span className="text-xs text-slate-400 font-mono px-2">警報模擬：</span>
+        <div className="flex flex-wrap items-center gap-2 bg-marine-950/80 p-1.5 rounded-xl border border-white/5">
+          <span className="text-[11px] text-marine-400 font-mono px-1.5">狀態演練：</span>
           <button
             onClick={() => handleSimulate('normal')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
               simMode === 'normal'
-                ? 'bg-esg-500 text-slate-950 shadow-glow-esg'
-                : 'bg-white/5 text-slate-300 hover:bg-white/10'
+                ? 'bg-sage-600 text-white shadow-card-clean'
+                : 'text-marine-400 hover:text-white'
             }`}
           >
             <CheckCircle2 className="w-3.5 h-3.5" /> 綠燈（常態正常）
           </button>
           <button
             onClick={() => handleSimulate('warning')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
               simMode === 'warning'
-                ? 'bg-sun-500 text-slate-950 shadow-glow-sun'
-                : 'bg-white/5 text-slate-300 hover:bg-white/10'
+                ? 'bg-amber-600 text-white shadow-card-clean'
+                : 'text-marine-400 hover:text-white'
             }`}
           >
             <AlertTriangle className="w-3.5 h-3.5" /> 黃燈（初級預警）
           </button>
           <button
             onClick={() => handleSimulate('danger')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
               simMode === 'danger'
-                ? 'bg-fire-500 text-white shadow-glow-fire animate-pulse'
-                : 'bg-white/5 text-slate-300 hover:bg-white/10'
+                ? 'bg-rose-600 text-white shadow-card-clean'
+                : 'text-marine-400 hover:text-white'
             }`}
           >
             <Shield className="w-3.5 h-3.5" /> 紅燈（超標警報）
@@ -467,101 +467,93 @@ export const Shipyard3DSimulator: React.FC = () => {
         </div>
 
         {/* Right: Sensor Real-time Telemetry & Detail Card */}
-        <div className="lg:col-span-4 flex flex-col gap-4">
+        <div className="lg:col-span-4 flex flex-col gap-3">
           {/* Selected Sensor Telemetry */}
-          <div
-            className={`rounded-2xl p-5 border backdrop-blur-xl transition-all ${
-              selectedSensor.status === 'normal'
-                ? 'bg-esg-950/30 border-esg-500/30 shadow-glow-esg'
-                : selectedSensor.status === 'warning'
-                ? 'bg-sun-950/40 border-sun-500/40 shadow-glow-sun'
-                : 'bg-fire-950/40 border-fire-500/50 shadow-glow-fire animate-pulse'
-            }`}
-          >
-            <div className="flex items-center justify-between mb-3">
+          <div className="rounded-xl p-4 border bg-marine-950/80 border-white/10 backdrop-blur-md space-y-3">
+            <div className="flex items-center justify-between">
               <span
-                className={`px-2.5 py-0.5 rounded text-xs font-bold font-mono tracking-wide ${
+                className={`px-2 py-0.5 rounded text-[11px] font-bold font-mono tracking-wide ${
                   selectedSensor.status === 'normal'
-                    ? 'bg-esg-500/20 text-esg-300'
+                    ? 'bg-sage-950/80 text-sage-300 border border-sage-800/60'
                     : selectedSensor.status === 'warning'
-                    ? 'bg-sun-500/20 text-sun-300'
-                    : 'bg-fire-500/20 text-fire-300'
+                    ? 'bg-amber-950/80 text-amber-300 border border-amber-800/60'
+                    : 'bg-rose-950/80 text-rose-300 border border-rose-800/60'
                 }`}
               >
-                STATUS: {selectedSensor.status.toUpperCase()}
+                狀態：{selectedSensor.status === 'normal' ? '正常' : selectedSensor.status === 'warning' ? '初級預警' : '超標警報'}
               </span>
-              <span className="text-xs font-mono text-slate-400 flex items-center gap-1">
-                <Radio className="w-3 h-3 text-ocean-400 animate-pulse" /> 5G / LoRaWAN
+              <span className="text-[11px] font-mono text-marine-400 flex items-center gap-1">
+                <Radio className="w-3 h-3 text-ocean-400" /> 連線正常
               </span>
             </div>
 
-            <h4 className="text-lg font-bold text-white leading-tight">{selectedSensor.name}</h4>
-            <p className="text-xs text-slate-300 mt-1 font-mono">{selectedSensor.location}</p>
+            <h4 className="text-sm font-bold text-white leading-snug">{selectedSensor.name}</h4>
+            <p className="text-xs text-marine-400 font-mono">{selectedSensor.location}</p>
 
             {/* Big Readout */}
-            <div className="my-4 p-4 rounded-xl bg-black/40 border border-white/10 flex items-baseline justify-between">
+            <div className="p-3 rounded-lg bg-marine-900/60 border border-white/5 flex items-baseline justify-between">
               <div>
-                <span className="text-xs text-slate-400 uppercase font-mono block">即時量測數值</span>
-                <span className="text-3xl font-extrabold font-mono text-white tracking-tight">
+                <span className="text-[10px] text-marine-400 uppercase font-mono block">即時量測數值</span>
+                <span className="text-2xl font-bold font-mono text-white tracking-tight">
                   {selectedSensor.value}
                 </span>
-                <span className="text-xs text-ocean-300 ml-1.5 font-mono">{selectedSensor.unit}</span>
+                <span className="text-xs text-ocean-400 ml-1 font-mono">{selectedSensor.unit}</span>
               </div>
               <div className="text-right">
-                <span className="text-xs text-slate-400 uppercase font-mono block">警報閾值</span>
-                <span className="text-xs font-mono text-amber-400">{selectedSensor.threshold}</span>
+                <span className="text-[10px] text-marine-400 uppercase font-mono block">警報閾值</span>
+                <span className="text-xs font-mono text-sand-300">{selectedSensor.threshold}</span>
               </div>
             </div>
 
             {/* Real-time mini sparkline */}
-            <div className="mb-3">
-              <div className="flex items-center justify-between text-xs text-slate-400 font-mono mb-1.5">
+            <div>
+              <div className="flex items-center justify-between text-[10px] text-marine-400 font-mono mb-1">
                 <span>即時應力/位移連續曲線</span>
                 <span>採樣率: 10 Hz</span>
               </div>
-              <div className="h-12 flex items-end gap-1 bg-black/30 p-1.5 rounded-lg border border-white/5">
+              <div className="h-10 flex items-end gap-0.5 bg-marine-900/40 p-1 rounded border border-white/5">
                 {waveformData.map((val, idx) => (
                   <div
                     key={idx}
                     style={{ height: `${val}%` }}
                     className={`flex-1 rounded-sm transition-all duration-300 ${
                       selectedSensor.status === 'normal'
-                        ? 'bg-esg-400/70'
+                        ? 'bg-sage-500/70'
                         : selectedSensor.status === 'warning'
-                        ? 'bg-sun-400/80'
-                        : 'bg-fire-400'
+                        ? 'bg-amber-500/80'
+                        : 'bg-rose-500'
                     }`}
                   />
                 ))}
               </div>
             </div>
 
-            <p className="text-xs text-slate-300 leading-relaxed bg-white/5 p-3 rounded-lg border border-white/5">
+            <p className="text-xs text-marine-300 leading-relaxed bg-marine-900/40 p-2.5 rounded-lg border border-white/5">
               {selectedSensor.detail}
             </p>
           </div>
 
           {/* Real-time System Event Log */}
-          <div className="rounded-2xl p-4 bg-slate-950/80 border border-white/10 flex-1 flex flex-col">
-            <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/10">
-              <span className="text-xs font-mono text-slate-400 font-bold uppercase flex items-center gap-1.5">
-                <Cpu className="w-3.5 h-3.5 text-purple-400" />
-                三色警報與工單聯動日誌
+          <div className="rounded-xl p-3.5 bg-marine-950/80 border border-white/10 flex-1 flex flex-col">
+            <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/5">
+              <span className="text-[11px] font-mono text-marine-400 font-semibold uppercase flex items-center gap-1.5">
+                <Cpu className="w-3.5 h-3.5 text-ocean-400" />
+                預警與工單聯動日誌
               </span>
-              <span className="text-[10px] font-mono text-ocean-400 bg-ocean-500/10 px-2 py-0.5 rounded">
-                LINE / Webhook 連線中
+              <span className="text-[10px] font-mono text-ocean-400">
+                即時推播中
               </span>
             </div>
-            <div className="space-y-2 overflow-y-auto max-h-[140px] text-xs font-mono pr-1">
+            <div className="space-y-1.5 overflow-y-auto max-h-[120px] text-xs font-mono pr-1">
               {logMessages.map((msg, idx) => (
                 <div
                   key={idx}
-                  className={`p-2 rounded border leading-relaxed ${
+                  className={`p-1.5 rounded text-[11px] leading-snug border ${
                     msg.includes('🚨')
-                      ? 'bg-fire-950/50 border-fire-500/40 text-fire-200'
+                      ? 'bg-rose-950/40 border-rose-800/40 text-rose-200'
                       : msg.includes('黃燈')
-                      ? 'bg-sun-950/50 border-sun-500/40 text-sun-200'
-                      : 'bg-white/5 border-white/5 text-slate-300'
+                      ? 'bg-amber-950/40 border-amber-800/40 text-amber-200'
+                      : 'bg-marine-900/40 border-white/5 text-marine-300'
                   }`}
                 >
                   {msg}

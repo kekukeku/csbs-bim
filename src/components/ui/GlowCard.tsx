@@ -1,40 +1,34 @@
 import React from 'react';
-import { clsx } from 'clsx';
 
 interface GlowCardProps {
   children: React.ReactNode;
   className?: string;
-  glowColor?: 'cyan' | 'emerald' | 'purple' | 'amber' | 'rose' | 'rainbow' | 'none';
-  interactive?: boolean;
-  onClick?: () => void;
+  glowColor?: 'cyan' | 'esg' | 'purple' | 'amber' | 'emerald' | 'blue' | 'ocean' | 'sage';
+  hoverEffect?: boolean;
 }
 
 export const GlowCard: React.FC<GlowCardProps> = ({
   children,
   className = '',
-  glowColor = 'none',
-  interactive = false,
-  onClick
+  glowColor = 'ocean',
+  hoverEffect = true,
 }) => {
-  const glowStyles = {
-    none: 'border-white/10 hover:border-white/20',
-    cyan: 'border-ocean-500/20 hover:border-ocean-400/50 hover:shadow-glow-ocean',
-    emerald: 'border-esg-500/20 hover:border-esg-400/50 hover:shadow-glow-esg',
-    purple: 'border-digital-500/20 hover:border-digital-400/50 hover:shadow-glow-digital',
-    amber: 'border-sun-500/20 hover:border-sun-400/50 hover:shadow-glow-sun',
-    rose: 'border-fire-500/20 hover:border-fire-400/50 hover:shadow-glow-fire',
-    rainbow: 'border-transparent glow-border-rainbow'
+  const borderStyles = {
+    cyan: 'hover:border-ocean-400/40',
+    esg: 'hover:border-sage-400/40',
+    purple: 'hover:border-slate-400/40',
+    amber: 'hover:border-amber-400/40',
+    emerald: 'hover:border-sage-400/40',
+    blue: 'hover:border-ocean-500/40',
+    ocean: 'hover:border-ocean-400/40',
+    sage: 'hover:border-sage-400/40',
   };
 
   return (
     <div
-      onClick={onClick}
-      className={clsx(
-        'relative rounded-2xl bg-[#0B132B]/80 backdrop-blur-xl border p-6 sm:p-8 transition-all duration-300',
-        glowStyles[glowColor],
-        interactive && 'cursor-pointer hover:-translate-y-1 hover:bg-[#0E1A3D]/90',
-        className
-      )}
+      className={`rounded-2xl bg-marine-900/80 border border-white/[0.08] p-6 backdrop-blur-md transition-all duration-200 ${
+        hoverEffect ? `hover:bg-marine-800/80 hover:-translate-y-0.5 ${borderStyles[glowColor] || 'hover:border-ocean-400/40'}` : ''
+      } ${className}`}
     >
       {children}
     </div>

@@ -1,81 +1,85 @@
 import React from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
-import { GlowCard } from '../ui/GlowCard';
 import { PARTNERS } from '../../data/proposalData';
-import { Anchor, Building2, BookOpenCheck, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import { Anchor, Building2, BookOpenCheck, CheckCircle2 } from 'lucide-react';
 
 export const GoldenTrianglePartners: React.FC = () => {
   const partnerIcons = [Anchor, Building2, BookOpenCheck];
-  const glowColors: ('cyan' | 'purple' | 'emerald')[] = ['cyan', 'purple', 'emerald'];
 
   return (
-    <section className="py-20 relative">
+    <section id="partners" className="py-20 relative bg-[#070D1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="三方產學研金"
-          slideTag="Slide 06 / 20"
-          title="三方聯合陣容："
-          gradientText="互補賦能的黃金三角"
-          subtitle="結合產業施作龍頭、學術數位研發平臺與國際永續會計專業，形成台船無法替代的黃金三角體系。"
+          badge="合作矩陣"
+          slideTag="三方聯合團隊"
+          title="黃金三角聯合陣容與"
+          gradientText="專業能量分工"
+          subtitle="結合營造施作、BIM 數位模型與永續會計法規能量，打造全方位工程履約陣容。"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {PARTNERS.map((partner, idx) => {
             const Icon = partnerIcons[idx];
             return (
-              <GlowCard
+              <div
                 key={idx}
-                glowColor={glowColors[idx]}
-                className="flex flex-col justify-between space-y-6"
+                className="p-6 rounded-2xl bg-marine-900/70 border border-white/10 flex flex-col justify-between space-y-6"
               >
                 <div>
-                  {/* Top Role & Icon */}
-                  <div className="flex items-center gap-3 pb-4 border-b border-white/10">
-                    <div className={`p-3 rounded-2xl bg-white/5 border border-white/10 ${partner.iconColor}`}>
-                      <Icon className="w-6 h-6" />
+                  <div className="flex items-center gap-3 pb-3 border-b border-white/5">
+                    <div className="p-2.5 rounded-xl bg-marine-950/80 text-ocean-400 border border-white/5">
+                      <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                        {partner.role}
+                      <span className="text-xs font-mono text-ocean-400 font-medium block">
+                        團隊角色 0{idx + 1}
                       </span>
-                      <h3 className="text-lg font-black text-white leading-tight mt-0.5">
+                      <h3 className="text-base font-bold text-white leading-tight">
                         {partner.shortName}
                       </h3>
                     </div>
                   </div>
 
-                  {/* Strengths */}
-                  <div className="mt-6 space-y-3">
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                      專業定位與核心強項
-                    </span>
-                    <ul className="space-y-2">
-                      {partner.strengths.map((s, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                          <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${partner.iconColor}`} />
-                          <span>{s}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <p className="text-xs text-marine-300 font-medium mt-3">
+                    {partner.role}
+                  </p>
+
+                  <div className="mt-4 space-y-3">
+                    <div>
+                      <span className="text-[11px] font-mono text-marine-400 uppercase font-medium block mb-1">
+                        核心實績與能量：
+                      </span>
+                      <ul className="space-y-1 text-xs text-slate-300">
+                        {partner.strengths.slice(0, 3).map((st, i) => (
+                          <li key={i} className="flex items-start gap-1.5">
+                            <span className="text-ocean-400 font-bold">•</span>
+                            <span>{st}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <span className="text-[11px] font-mono text-marine-400 uppercase font-medium block mb-1">
+                        本案主要職責：
+                      </span>
+                      <ul className="space-y-1 text-xs text-slate-300">
+                        {partner.responsibilities.slice(0, 3).map((resp, i) => (
+                          <li key={i} className="flex items-start gap-1.5">
+                            <span className="text-sage-400 font-bold">•</span>
+                            <span>{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
 
-                {/* Specific Responsibilities */}
-                <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-ocean-400 block flex items-center gap-1.5">
-                    <Zap className="w-3.5 h-3.5" />
-                    本專案具體負責任務
-                  </span>
-                  <ul className="space-y-1.5 text-xs text-slate-300">
-                    {partner.responsibilities.map((r, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-ocean-400 font-bold">•</span>
-                        <span>{r}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="p-3 rounded-xl bg-marine-950/80 border border-white/5 text-xs text-marine-300">
+                  <strong className="text-white block font-mono text-[11px] mb-0.5">⚖️ 責任邊界：</strong>
+                  {partner.legalBoundary}
                 </div>
-              </GlowCard>
+              </div>
             );
           })}
         </div>
