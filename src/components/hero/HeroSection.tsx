@@ -61,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenPresentation }) 
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-sm bg-ocean-600 hover:bg-ocean-500 text-white shadow-ocean-soft transition-all duration-200 flex items-center justify-center gap-2"
             >
               <Presentation className="w-4 h-4" />
-              <span>開啟 20 頁全景簡報</span>
+              <span>開啟 10 頁精選簡報</span>
             </button>
 
             <a

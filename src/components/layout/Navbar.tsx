@@ -80,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPresentation }) => {
             className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl bg-marine-800 hover:bg-marine-700 text-slate-200 border border-white/10 transition-all"
           >
             <Presentation className="w-3.5 h-3.5 text-ocean-400" />
-            <span>20頁簡報</span>
+            <span>精選簡報</span>
           </button>
 
           <a
