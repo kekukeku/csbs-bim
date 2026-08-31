@@ -12,7 +12,7 @@ export const ProjectRoadmapTimeline: React.FC = () => {
           slideTag="五階段推進甘特圖"
           title="專案推進時程與"
           gradientText="關鍵里程碑 (Roadmap)"
-          subtitle="期程自 115 年第 4 季前置準備起算，嚴格對應 G01~G04 決策 Gate，確保各階段成果驗收放行後再推進！"
+          subtitle="期程自 115 年第 4 季前置準備起算，嚴格對應 G01~G04 決策 Gate，確保各階段成果驗收放行後再推進。"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">

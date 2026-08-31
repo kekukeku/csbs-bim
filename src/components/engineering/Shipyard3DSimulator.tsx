@@ -137,7 +137,7 @@ export const Shipyard3DSimulator: React.FC = () => {
       setSensors(updated);
       setSelectedSensor(updated[0]);
       setLogMessages(prev => [
-        `[${now}] 【黃燈初級預警】大塢 450m 碼頭傾斜達 0.042 deg！已自動發送 LINE/SMS 通報工務主管與現場巡檢班長查核`,
+        `[${now}] 【黃燈初級預警】大塢 450m 碼頭傾斜達 0.042 deg。已自動發送 LINE/SMS 通報工務主管與現場巡檢班長查核`,
         `[${now}] 【黃燈初級預警】小塢靠泊瞬間應變 298 με，接近安全上限`,
         ...prev.slice(0, 4)
       ]);
@@ -151,8 +151,8 @@ export const Shipyard3DSimulator: React.FC = () => {
       setSensors(updated);
       setSelectedSensor(updated[0]);
       setLogMessages(prev => [
-        `[${now}] 🚨【紅燈超標緊急警報】大塢碼頭傾斜 0.068 deg 且壁裂張開達 0.45 mm！觸發重大沉陷掏空警報！`,
-        `[${now}] 🚨【自動聯防】已同步啟動台船工安處緊急通報、推播工單至台蝕/中科大 BIM 決策中心，建議暫停 80 噸重型吊車通行！`,
+        `[${now}] 🚨【紅燈超標緊急警報】大塢碼頭傾斜 0.068 deg 且壁裂張開達 0.45 mm。觸發重大沉陷掏空警報。`,
+        `[${now}] 🚨【自動聯防】已同步啟動台船工安處緊急通報、推播工單至台蝕/中科大 BIM 決策中心，建議暫停 80 噸重型吊車通行。`,
         ...prev.slice(0, 3)
       ]);
     }

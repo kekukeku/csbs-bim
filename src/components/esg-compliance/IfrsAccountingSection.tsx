@@ -12,7 +12,7 @@ export const IfrsAccountingSection: React.FC = () => {
           slideTag="環會協會專業賦能"
           title="IFRS S1/S2 永續揭露與"
           gradientText="重大資本支出 (CAPEX) 財務連結"
-          subtitle="環境管理會計協會協助台船將工程防蝕與 BIM 監測數據，直接轉化為符合金管會規範的 S1/S2 氣候實體風險與職安內控底稿！"
+          subtitle="環境管理會計協會協助台船將工程防蝕與 BIM 監測數據，直接轉化為符合金管會規範的 S1/S2 氣候實體風險與職安內控底稿。"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">

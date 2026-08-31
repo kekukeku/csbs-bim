@@ -37,7 +37,7 @@ export const ActionStepsChecklist: React.FC = () => {
           slideTag="近期三大推進步驟"
           title="推動港灣工程升級："
           gradientText="近期具體推進三步驟"
-          subtitle="低風險啟動，以「五大前提釐清 ➔ 閉門戰略演練 ➔ 正式提報董事會」三步走，爭取首批示範案！"
+          subtitle="低風險啟動，以「五大前提釐清 ➔ 閉門戰略演練 ➔ 正式提報董事會」三步走，爭取首批示範案。"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
@@ -91,7 +91,7 @@ export const ActionStepsChecklist: React.FC = () => {
         {/* Action Completion Status Card */}
         <div className="rounded-2xl p-6 sm:p-8 bg-marine-900/80 border border-white/10 max-w-3xl mx-auto text-center space-y-4">
           <h3 className="text-lg font-bold text-white">
-            攜手成為台灣第一家兼具「重防蝕 ＋ BIM 數位雙生 ＋ 上市 ESG 治理」的港灣工程先鋒！
+            攜手成為台灣第一家兼具「重防蝕 ＋ BIM 數位雙生 ＋ 上市 ESG 治理」的港灣工程先鋒。
           </h3>
           <p className="text-xs sm:text-sm text-marine-300 max-w-xl mx-auto leading-relaxed">
             我們已完成全套展示模型與簡報素材，隨時可配合台蝕團隊啟動五大前提協調與閉門戰略演練。

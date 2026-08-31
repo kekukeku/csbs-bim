@@ -11,7 +11,7 @@ export const StrategyComparisonToggle: React.FC = () => {
           slideTag="商業模式升級"
           title="戰略解法："
           gradientText="工程修繕預算升級為「ESG 資本投資」"
-          subtitle="將傳統被視為費用的修補工項，升級為符合金管會規範、能爭取董事會專款支持的數位雙生資產！"
+          subtitle="將傳統被視為費用的修補工項，升級為符合金管會規範、能爭取董事會專款支持的數位雙生資產。"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">

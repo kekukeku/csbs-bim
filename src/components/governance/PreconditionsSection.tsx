@@ -12,7 +12,7 @@ export const PreconditionsSection: React.FC = () => {
           slideTag="五大優先釐清事項"
           title="提列五大前提條件："
           gradientText="業主優先釐清事項與招標因應"
-          subtitle="下列事項將實質影響本建議書之服務範圍、報價單價與可行性。部分事項之答案將決定特定工項之取捨，敬請台船招標單位優先協助釐清！"
+          subtitle="下列事項將實質影響本建議書之服務範圍、報價單價與可行性。部分事項之答案將決定特定工項之取捨，敬請台船招標單位優先協助釐清。"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -14,7 +14,7 @@ export const CarbonLedgerCalculator: React.FC = () => {
           slideTag="ISO 14064 / 14067"
           title="全生命週期碳帳本："
           gradientText="設計、施工至運維的真實可追溯數據"
-          subtitle="工程團隊隨標單產出真實可追溯之材料 EPD 與施工耗能清冊，供台船永續部與會計師查驗，邊界清楚不越俎代庖！"
+          subtitle="工程團隊隨標單產出真實可追溯之材料 EPD 與施工耗能清冊，供台船永續部與會計師查驗，邊界清楚不越俎代庖。"
         />
 
         {/* 3 Stages Horizontal Selector */}

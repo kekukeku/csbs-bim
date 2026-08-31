@@ -16,7 +16,7 @@ export const EngineeringTargetsSection: React.FC = () => {
           slideTag="科學數據與實施方案"
           title="標的工程數位實施方案："
           gradientText="大/小船塢、海軍庫房與碼頭延壽"
-          subtitle="基於科學事實修正劣化機理（大塢水位變動帶腐蝕、庫房 1,158 坪、碼頭使用 35~55 年），提出直面大塢「停塢即停營收」的輕量快拆分段工法與四大關鍵淨空檢核！"
+          subtitle="基於科學事實修正劣化機理（大塢水位變動帶腐蝕、庫房 1,158 坪、碼頭使用 35~55 年），提出直面大塢「停塢即停營收」的輕量快拆分段工法與四大關鍵淨空檢核。"
         />
 
         {/* Embedded Live 3D Digital Twin Sandbox */}

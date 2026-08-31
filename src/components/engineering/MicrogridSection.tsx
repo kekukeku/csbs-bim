@@ -14,7 +14,7 @@ export const MicrogridSection: React.FC = () => {
           slideTag="能源管理與平戰轉換"
           title="務實調整綠能儲能邊界："
           gradientText="平戰轉換與儲能安全（選項服務）"
-          subtitle="誠實揭露戰備儲能與微電網受限於海軍國防部核准、防火避難綜合檢討與涉密資安審查等前提，列為【選項服務】，未經業主核准前不具履約義務，避免未審先承諾！"
+          subtitle="誠實揭露戰備儲能與微電網受限於海軍國防部核准、防火避難綜合檢討與涉密資安審查等前提，列為【選項服務】，未經業主核准前不具履約義務，避免未審先承諾。"
         />
 
         {/* Boundary Notice Banner */}
@@ -146,7 +146,7 @@ export const MicrogridSection: React.FC = () => {
                       20ms 瞬間切換孤島運轉 ｜ 72 小時連續戰備
                     </h3>
                     <p className="text-xs sm:text-sm text-marine-300 leading-relaxed">
-                      外部電網中斷時，微電網在 20 毫秒內瞬間接管，優先保證潛艦機敏庫房與船塢排水系統連續 72 小時不斷電運作！
+                      外部電網中斷時，微電網在 20 毫秒內瞬間接管，優先保證潛艦機敏庫房與船塢排水系統連續 72 小時不斷電運作。
                     </p>
 
                     {/* Island Mode Key Priorities */}

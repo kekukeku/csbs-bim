@@ -24,7 +24,7 @@ export const RoiMetricCards: React.FC = () => {
           slideTag="財務回報與管理指標"
           title="重大效益量化與"
           gradientText="互動式投資回報 (ROI) 試算"
-          subtitle="導入 BIM 數位雙生與施工風險治理，不僅消除現場重工與工程糾紛，更能大幅降低非預期停工損失！"
+          subtitle="導入 BIM 數位雙生與施工風險治理，不僅消除現場重工與工程糾紛，更能大幅降低非預期停工損失。"
         />
 
         {/* 4 Quantified Metric Cards */}
@@ -65,7 +65,7 @@ export const RoiMetricCards: React.FC = () => {
               <div>
                 <div className="flex justify-between text-xs font-mono mb-1.5">
                   <span className="text-marine-300 font-medium">預計工程總預算 (CAPEX)：</span>
-                  <span className="text-ocean-400 font-bold">NT$ {projectBudget} 萬元</span>
+                  <span className="text-ocean-400 font-bold">TWD$ {projectBudget} 萬元</span>
                 </div>
                 <input
                   type="range"
@@ -81,7 +81,7 @@ export const RoiMetricCards: React.FC = () => {
               <div>
                 <div className="flex justify-between text-xs font-mono mb-1.5">
                   <span className="text-marine-300 font-medium">船塢/碼頭年度潛在停工損失：</span>
-                  <span className="text-sand-300 font-bold">NT$ {annualDowntimeRisk} 萬元</span>
+                  <span className="text-sand-300 font-bold">TWD$ {annualDowntimeRisk} 萬元</span>
                 </div>
                 <input
                   type="range"
@@ -104,15 +104,15 @@ export const RoiMetricCards: React.FC = () => {
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between py-1 border-b border-white/5">
                   <span className="text-marine-400">停工損失避免效益：</span>
-                  <span className="text-white font-mono font-bold">+ NT$ {savedDowntime} 萬元 / 年</span>
+                  <span className="text-white font-mono font-bold">+ TWD$ {savedDowntime} 萬元 / 年</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-white/5">
                   <span className="text-marine-400">施工重工減少效益：</span>
-                  <span className="text-white font-mono font-bold">+ NT$ {savedRework} 萬元</span>
+                  <span className="text-white font-mono font-bold">+ TWD$ {savedRework} 萬元</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-white/5">
                   <span className="text-marine-400">預估數位治理投資費：</span>
-                  <span className="text-sand-300 font-mono">- NT$ {estimatedDigitalCost} 萬元</span>
+                  <span className="text-sand-300 font-mono">- TWD$ {estimatedDigitalCost} 萬元</span>
                 </div>
               </div>
 
@@ -120,7 +120,7 @@ export const RoiMetricCards: React.FC = () => {
                 <div>
                   <span className="text-[11px] font-mono text-marine-400 block uppercase">首年淨效益</span>
                   <span className="text-2xl font-bold font-mono text-sage-300">
-                    + NT$ {netBenefit} 萬元
+                    + TWD$ {netBenefit} 萬元
                   </span>
                 </div>
                 <div className="text-right">

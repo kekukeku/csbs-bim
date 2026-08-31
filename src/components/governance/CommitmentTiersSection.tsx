@@ -155,22 +155,22 @@ export const CommitmentTiersSection: React.FC = () => {
                 <Building2 className="w-4 h-4" /> BIM 數位協力 ＋ 中科大學研
               </span>
               <p className="text-marine-300 leading-relaxed">
-                負責點雲掃描、現況基線盤查、淨空檢核與平台維運；<strong className="text-white">無工程變更核定權，亦不承擔結構計算與法定簽證責任</strong>。
+                負責點雲掃描、現況基線盤查、淨空檢核與平台維運；<strong className="text-white">外聘具執業執照之結構技師事務所進行法定計算與簽證</strong>；團隊無工程變更簽認權。
               </p>
               <div className="p-2 rounded bg-marine-900/80 text-slate-300 font-mono text-[11px]">
-                ✔ 技術分析與整合，無變更簽認權
+                ✔ 技術分析與整合，外聘技師結構簽證
               </div>
             </div>
 
             <div className="p-4 rounded-xl bg-marine-950/60 border border-white/5 space-y-2">
               <span className="font-semibold text-sage-300 block text-sm flex items-center gap-1.5">
-                <BookOpenCheck className="w-4 h-4" /> 外部執業技師 ＋ 第三方查證
+                <BookOpenCheck className="w-4 h-4" /> 環會協會 ＋ 第三方查證機構
               </span>
               <p className="text-marine-300 leading-relaxed">
-                天車承載與結構補強依法由<strong className="text-white">外聘執業結構技師</strong>簽證負責；碳盤查確信由獨立第三方查驗機構出具。
+                負責提供 IFRS S1/S2 氣候實體風險分析底稿與碳帳本架構；<strong className="text-white">碳盤查確信證書依法由獨立第三方查驗機構出具</strong>。
               </p>
               <div className="p-2 rounded bg-marine-900/80 text-slate-300 font-mono text-[11px]">
-                ✔ 結構簽證與碳確信依法專業外購
+                ✔ 專注會計治理底稿，第三方出具碳確信
               </div>
             </div>
           </div>

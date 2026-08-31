@@ -497,7 +497,7 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
               <span className="text-xs font-mono text-ocean-400 font-medium uppercase">Slide 20 / 20</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">結論與近期具體推進三步驟</h2>
               <p className="text-sm text-sage-300 font-semibold mt-1.5">
-                成為台灣第一家兼具「重防蝕技術、BIM 港灣數位雙生、上市 ESG 合規」的智慧海洋工程先鋒！
+                成為台灣第一家兼具「重防蝕技術、BIM 港灣數位雙生、上市 ESG 合規」的智慧海洋工程先鋒。
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">

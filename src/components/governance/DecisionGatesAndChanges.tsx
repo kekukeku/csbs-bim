@@ -14,7 +14,7 @@ export const DecisionGatesAndChanges: React.FC = () => {
           slideTag="四大管控制度"
           title="施工風險治理架構："
           gradientText="四道決策 Gate ＋ 四類變更治理 ＋ 客觀 KPI"
-          subtitle="以四道決策 Gate 控制推進節奏，每一 Gate 未簽認絕不盲目採購施工，並作為階段獨立計價依據！"
+          subtitle="以四道決策 Gate 控制推進節奏，每一 Gate 未簽認絕不盲目採購施工，並作為階段獨立計價依據。"
         />
 
         {/* Tab Buttons */}

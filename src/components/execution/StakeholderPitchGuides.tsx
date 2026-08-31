@@ -22,7 +22,7 @@ export const StakeholderPitchGuides: React.FC = () => {
           slideTag="利害關係人分層說服"
           title="針對決策與執行層的"
           gradientText="分層提案溝通術"
-          subtitle="針對「董事會與永續部門」及「現場施工班長」的不同維度痛點，量身打造精準說服話術與心魔破除指南！"
+          subtitle="針對「董事會與永續部門」及「現場施工班長」的不同維度痛點，量身打造精準說服話術與心魔破除指南。"
         />
 
         {/* 2 Persona Selectors */}
