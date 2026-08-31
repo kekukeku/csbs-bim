@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
               提案聯合團隊
             </span>
             <ul className="space-y-1.5 text-marine-300">
-              <li>中華民國環境管理會計協會</li>
+              <li>台灣環境管理會計協會</li>
               <li>中國科技大學建築設計院</li>
             </ul>
           </div>

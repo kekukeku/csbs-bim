@@ -46,7 +46,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenPresentation }) 
           <div className="pt-2 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto text-left text-xs">
             <div className="p-3.5 rounded-xl bg-marine-900/60 border border-white/5 space-y-1">
               <span className="text-marine-400 font-mono block text-[11px]">提案聯合團隊</span>
-              <p className="font-semibold text-slate-200">中華民國環境管理會計協會 × 中國科技大學建築設計院</p>
+              <p className="font-semibold text-slate-200">台灣環境管理會計協會 × 中國科技大學建築設計院</p>
             </div>
             <div className="p-3.5 rounded-xl bg-marine-900/60 border border-white/5 space-y-1">
               <span className="text-marine-400 font-mono block text-[11px]">提報對象夥伴</span>

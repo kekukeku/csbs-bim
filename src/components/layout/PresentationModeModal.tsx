@@ -76,7 +76,7 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl text-left text-xs">
               <div className="p-4 rounded-xl bg-marine-900/60 border border-white/10 space-y-1">
                 <span className="text-ocean-400 font-mono block">提案聯合團隊</span>
-                <span className="font-semibold text-white">中華民國環境管理會計協會 × 中國科技大學建築設計院</span>
+                <span className="font-semibold text-white">台灣環境管理會計協會 × 中國科技大學建築設計院</span>
               </div>
               <div className="p-4 rounded-xl bg-marine-900/60 border border-white/10 space-y-1">
                 <span className="text-sage-400 font-mono block">對象夥伴</span>

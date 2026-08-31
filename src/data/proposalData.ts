@@ -20,7 +20,7 @@ export const PROPOSAL_META = {
   date: "2026 年 9 月",
   version: "v3.0 治理精進版（六大升級）",
   proposers: [
-    { name: "中華民國環境管理會計協會", role: "永續會計與 IFRS S1/S2 治理" },
+    { name: "台灣環境管理會計協會", role: "永續會計與 IFRS S1/S2 治理" },
     { name: "中國科技大學建築設計院", role: "BIM 數位模型與點雲研發（產學團隊）" }
   ],
   targetPartners: [
@@ -430,7 +430,7 @@ export const PARTNERS: PartnerInfo[] = [
     legalBoundary: "提供技術分析、圖模整合與教育訓練；無工程變更核定權；結構安全簽證依法委由外聘執業結構技師事務所獨立簽章負責。"
   },
   {
-    name: "中華民國環境管理會計協會 ＋ 第三方查驗機構",
+    name: "台灣環境管理會計協會 ＋ 第三方查驗機構",
     shortName: "環會協會 / 永續顧問",
     role: "金管會 IFRS 治理諮詢、碳帳本建置與第三方碳查證",
     gradient: "from-emerald-500 to-teal-600",
