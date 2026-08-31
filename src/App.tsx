@@ -4,6 +4,8 @@ import { Footer } from './components/layout/Footer';
 import { PresentationModeModal } from './components/layout/PresentationModeModal';
 import { HeroSection } from './components/hero/HeroSection';
 import { ExecutiveSummary } from './components/overview/ExecutiveSummary';
+import { CommitmentTiersSection } from './components/governance/CommitmentTiersSection';
+import { DecisionGatesAndChanges } from './components/governance/DecisionGatesAndChanges';
 import { DoubleDilemmaSection } from './components/pain-points/DoubleDilemmaSection';
 import { StrategyComparisonToggle } from './components/strategy/StrategyComparisonToggle';
 import { GoldenTrianglePartners } from './components/strategy/GoldenTrianglePartners';
@@ -14,6 +16,7 @@ import { IfrsAccountingSection } from './components/esg-compliance/IfrsAccountin
 import { CarbonLedgerCalculator } from './components/esg-compliance/CarbonLedgerCalculator';
 import { RoiMetricCards } from './components/impact/RoiMetricCards';
 import { StakeholderPitchGuides } from './components/execution/StakeholderPitchGuides';
+import { PreconditionsSection } from './components/governance/PreconditionsSection';
 import { ModularContractPricing } from './components/execution/ModularContractPricing';
 import { ProjectRoadmapTimeline } from './components/execution/ProjectRoadmapTimeline';
 import { RiskQnAAccordion } from './components/execution/RiskQnAAccordion';
@@ -31,6 +34,8 @@ export function App() {
       <main>
         <HeroSection onOpenPresentation={() => setPresentationOpen(true)} />
         <ExecutiveSummary />
+        <CommitmentTiersSection />
+        <DecisionGatesAndChanges />
         <DoubleDilemmaSection />
         <StrategyComparisonToggle />
         <GoldenTrianglePartners />
@@ -41,6 +46,7 @@ export function App() {
         <CarbonLedgerCalculator />
         <RoiMetricCards />
         <StakeholderPitchGuides />
+        <PreconditionsSection />
         <ModularContractPricing />
         <ProjectRoadmapTimeline />
         <RiskQnAAccordion />

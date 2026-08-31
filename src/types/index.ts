@@ -13,6 +13,7 @@ export interface PartnerInfo {
   iconColor: string;
   strengths: string[];
   responsibilities: string[];
+  legalBoundary: string;
 }
 
 export interface EngineeringTarget {
@@ -22,12 +23,15 @@ export interface EngineeringTarget {
   accentColor: string;
   glowColor: string;
   specs: { label: string; value: string }[];
+  scientificMechanism: string;
   painPoints: string[];
+  commercialReality: string;
   solutions: {
     title: string;
     description: string;
     benefit: string;
   }[];
+  clearanceChecks: string[];
   sensorTypes: {
     name: string;
     location: string;
@@ -57,6 +61,7 @@ export interface CarbonStage {
   carbonOutputs: string[];
   isoStandard: string;
   reductionTech: string[];
+  boundaryClarification: string;
 }
 
 export interface RoadmapPhase {
@@ -82,4 +87,52 @@ export interface ActionStep {
   owner: string;
   description: string;
   deliverable: string;
+}
+
+export interface CommitmentTier {
+  tier: string;
+  name: string;
+  definition: string;
+  legalEffect: string;
+  badgeColor: string;
+  items: {
+    title: string;
+    owner: string;
+    status: '自辦' | '協力' | '外購' | '待覓';
+    desc: string;
+  }[];
+}
+
+export interface DecisionGate {
+  gateId: string;
+  name: string;
+  timeline: string;
+  triggerCondition: string;
+  keyDeliverables: string[];
+  billingMilestone: string;
+  color: string;
+}
+
+export interface ChangeGovernanceType {
+  type: string;
+  name: string;
+  definition: string;
+  evidenceRequired: string;
+  approvalProcess: string;
+  impactControl: string;
+}
+
+export interface ObjectiveKPI {
+  indicator: string;
+  target: string;
+  significance: string;
+  verificationMethod: string;
+}
+
+export interface PreconditionItem {
+  id: string;
+  title: string;
+  keyQuestions: string[];
+  impactOnScope: string;
+  actionRequired: string;
 }

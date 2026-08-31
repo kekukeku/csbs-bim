@@ -1,6 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Maximize2, Minimize2, Play, Pause, Layers, BookOpen } from 'lucide-react';
-import { CORE_CHAPTERS, DOUBLE_DILEMMAS, CSBS_BOTTLENECKS, PARTNERS, ENGINEERING_TARGETS, MICROGRID_DATA, BIM_PLATFORM_FEATURES, ESG_IFRS_DATA, CARBON_LIFECYCLE_STAGES, QUANTIFIED_ROI, STAKEHOLDER_PERSONAS, CONTRACT_PRICING_MODULES, ROADMAP_PHASES, RISK_QNA, ACTION_STEPS, PROPOSAL_META } from '../../data/proposalData';
+import { X, ChevronLeft, ChevronRight, Layers, BookOpen, Scale, GitBranch, Target, FileText, CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { 
+  CORE_CHAPTERS, 
+  DOUBLE_DILEMMAS, 
+  CSBS_BOTTLENECKS, 
+  PARTNERS, 
+  ENGINEERING_TARGETS, 
+  MICROGRID_DATA, 
+  BIM_PLATFORM_FEATURES, 
+  ESG_IFRS_DATA, 
+  CARBON_LIFECYCLE_STAGES, 
+  QUANTIFIED_ROI, 
+  STAKEHOLDER_PERSONAS, 
+  CONTRACT_PRICING_MODULES, 
+  ROADMAP_PHASES, 
+  RISK_QNA, 
+  ACTION_STEPS, 
+  COMMITMENT_TIERS,
+  DECISION_GATES,
+  CHANGE_GOVERNANCE_TYPES,
+  OBJECTIVE_KPIS,
+  FIVE_PRECONDITIONS,
+  PROPOSAL_META 
+} from '../../data/proposalData';
 
 interface PresentationModeModalProps {
   isOpen: boolean;
@@ -42,19 +64,19 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
     switch (currentSlide) {
       case 1:
         return (
-          <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto py-12">
+          <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto py-12 animate-fadeIn">
             <span className="px-4 py-1 rounded-full bg-ocean-500/20 text-ocean-300 text-xs font-mono font-bold tracking-widest uppercase mb-6 border border-ocean-500/30">
-              Joint Strategic Proposal 2026
+              {PROPOSAL_META.version}
             </span>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white leading-tight">
               以 <span className="gradient-text-ocean">BIM 數位雙生</span> 與{' '}
               <span className="gradient-text-esg">ESG 永續治理</span>
               <br />賦能台船港灣工程升級
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
-              翻轉傳統削價競爭，建立防蝕延壽、三色即時預警與 IFRS S1/S2 資本支出確信體系
+            <p className="mt-4 text-base sm:text-lg text-ocean-300 font-mono">
+              {PROPOSAL_META.subtitle}
             </p>
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl text-left">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl text-left">
               <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                 <span className="text-xs text-ocean-400 font-mono block">提案聯合團隊</span>
                 <span className="text-sm font-bold text-white">中華民國環境管理會計協會 × 中國科技大學建築設計院</span>
@@ -69,10 +91,10 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 2:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-8">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 02 / 20</span>
-              <h2 className="text-3xl font-extrabold text-white">核心架構（五大部戰略推進）</h2>
+              <h2 className="text-3xl font-extrabold text-white">核心架構（五大部戰略推進全景）</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {CORE_CHAPTERS.map(ch => (
@@ -93,11 +115,11 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 3:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-8">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 03 / 20</span>
-              <h2 className="text-3xl font-extrabold text-white">台船的雙重困境與核心痛點</h2>
-              <p className="text-sm text-slate-400 mt-1">實體港灣設施嚴重老化 × 資本市場 ESG / IFRS 合規監管雙重夾擊</p>
+              <h2 className="text-3xl font-extrabold text-white">台船的雙重困境（基於科學事實）</h2>
+              <p className="text-sm text-slate-400 mt-1">實體港灣設施乾濕交替帶老化 × 資本市場 ESG / IFRS 合規監管</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {DOUBLE_DILEMMAS.map((d, idx) => (
@@ -122,7 +144,7 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 4:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-8">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 04 / 20</span>
               <h2 className="text-3xl font-extrabold text-white">台蝕目前的挑戰：傳統工程分包的瓶頸</h2>
@@ -137,8 +159,8 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
                   <div className="p-3 rounded-xl bg-rose-950/20 border border-rose-500/20 text-xs text-rose-200">
                     <span className="font-bold">現況：</span>{b.status}
                   </div>
-                  <div className="p-3 rounded-xl bg-amber-950/20 border border-amber-500/20 text-xs text-amber-200">
-                    <span className="font-bold">衝擊：</span>{b.impact}
+                  <div className="p-3 rounded-xl bg-esg-950/20 border border-esg-500/20 text-xs text-esg-300">
+                    <span className="font-bold">突破解法：</span>{b.solution}
                   </div>
                 </div>
               ))}
@@ -148,7 +170,7 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 5:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-8">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 05 / 20</span>
               <h2 className="text-3xl font-extrabold text-white">戰略解法：工程預算升級為「ESG資本投資」</h2>
@@ -168,7 +190,7 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
                 <span className="text-xs font-mono text-esg-400 font-bold uppercase block">加值策略：BIM + ESG (Transformation)</span>
                 <h3 className="text-xl font-bold text-white">數位雙生防災監測 ＋ S1/S2 合規帳本</h3>
                 <ul className="space-y-2 text-sm text-esg-300">
-                  <li>✔ 董事會層級專款支持（CAPEX）</li>
+                  <li>✔ 董事會層級專款支持（CAPEX 資本化）</li>
                   <li>✔ 換算氣候財務風險，避免千萬級停工損失</li>
                   <li>✔ 鎖定台蝕長期運維服務與專利塗料</li>
                 </ul>
@@ -179,10 +201,10 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 6:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-8">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 06 / 20</span>
-              <h2 className="text-3xl font-extrabold text-white">三方聯合陣容：互補賦能架構</h2>
+              <h2 className="text-3xl font-extrabold text-white">三方聯合陣容與明確法律責任邊界</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {PARTNERS.map((p, idx) => (
@@ -190,18 +212,15 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
                   <div>
                     <span className="text-xs font-mono text-ocean-400 font-bold block">{p.role}</span>
                     <h3 className="text-lg font-bold text-white mt-1">{p.shortName}</h3>
-                    <div className="mt-3 space-y-2">
-                      <span className="text-xs font-mono text-slate-400 block">核心強項：</span>
-                      <ul className="text-xs text-slate-300 space-y-1">
-                        {p.strengths.slice(0, 3).map((st, i) => (
-                          <li key={i}>• {st}</li>
-                        ))}
-                      </ul>
+                    <div className="mt-3 space-y-1 text-xs text-slate-300">
+                      {p.strengths.slice(0, 2).map((st, i) => (
+                        <p key={i}>• {st}</p>
+                      ))}
                     </div>
                   </div>
-                  <div className="p-3 rounded-xl bg-white/5 text-xs text-ocean-300">
-                    <span className="font-bold block text-white mb-1">負責任務：</span>
-                    {p.responsibilities[0]}
+                  <div className="p-3 rounded-xl bg-purple-950/40 border border-purple-500/30 text-xs text-purple-200">
+                    <strong className="block text-white mb-0.5">⚖️ 法律責任邊界：</strong>
+                    {p.legalBoundary}
                   </div>
                 </div>
               ))}
@@ -215,7 +234,7 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
       case 10: {
         const target = ENGINEERING_TARGETS[currentSlide - 7];
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">
                 Slide 0{currentSlide} / 20
@@ -225,20 +244,18 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3">
-                <h3 className="text-sm font-bold text-ocean-400 uppercase font-mono">標的現況與規格</h3>
-                {target.specs.map((sp, idx) => (
-                  <div key={idx} className="p-2.5 rounded-lg bg-black/30 text-xs">
-                    <span className="text-slate-400 block">{sp.label}</span>
-                    <span className="font-bold text-white">{sp.value}</span>
-                  </div>
-                ))}
+                <h3 className="text-sm font-bold text-cyan-400 uppercase font-mono">科學機理與現況</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">{target.scientificMechanism}</p>
+                <div className="p-3 rounded-xl bg-black/40 text-xs text-amber-300 border border-amber-500/20">
+                  <strong>商業解法：</strong>{target.commercialReality}
+                </div>
               </div>
               <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3">
-                <h3 className="text-sm font-bold text-amber-400 uppercase font-mono">現場痛點與危機</h3>
+                <h3 className="text-sm font-bold text-purple-400 uppercase font-mono">淨空衝突檢核 (Clearance)</h3>
                 <ul className="space-y-2 text-xs text-slate-300">
-                  {target.painPoints.map((pt, idx) => (
-                    <li key={idx} className="p-2 rounded bg-amber-950/20 border border-amber-500/20">
-                      ⚠ {pt}
+                  {target.clearanceChecks.map((chk, idx) => (
+                    <li key={idx} className="p-2 rounded bg-purple-950/20 border border-purple-500/20">
+                      ✔ {chk}
                     </li>
                   ))}
                 </ul>
@@ -261,11 +278,14 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 11:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 11 / 20</span>
               <h2 className="text-3xl font-extrabold text-white">{MICROGRID_DATA.title}</h2>
-              <p className="text-sm text-esg-300 mt-1">{MICROGRID_DATA.subtitle}</p>
+              <p className="text-sm text-sun-300 mt-1">{MICROGRID_DATA.subtitle}</p>
+            </div>
+            <div className="mb-6 p-4 rounded-2xl bg-sun-950/30 border border-sun-500/40 text-xs text-slate-200">
+              {MICROGRID_DATA.boundaryNotice}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {MICROGRID_DATA.solutions.map((sol, idx) => (
@@ -284,7 +304,7 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 12:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 12 / 20</span>
               <h2 className="text-3xl font-extrabold text-white">中國科大 BIM 系統平臺：實體功能與視覺化</h2>
@@ -306,7 +326,7 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 13:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 13 / 20</span>
               <h2 className="text-3xl font-extrabold text-white">環會協會 ESG 優勢：IFRS S1/S2 與財務連結</h2>
@@ -332,25 +352,23 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 14:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 14 / 20</span>
-              <h2 className="text-3xl font-extrabold text-white">從施工到運維的碳帳本與碳足跡計算</h2>
+              <h2 className="text-3xl font-extrabold text-white">從施工到運維的碳帳本與邊界澄清</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {CARBON_LIFECYCLE_STAGES.map((st, idx) => (
                 <div key={idx} className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-4">
                   <span className="text-xs font-mono text-ocean-400 font-bold">{st.stage} ｜ {st.isoStandard}</span>
                   <h3 className="text-base font-bold text-white">{st.title}</h3>
-                  <div className="space-y-2 text-xs text-slate-300">
-                    <span className="font-bold text-slate-400 block">數據採集：</span>
-                    {st.dataInputs.map((inp, i) => (
-                      <p key={i}>• {inp}</p>
-                    ))}
+                  <div className="p-3 rounded-xl bg-black/40 text-xs text-slate-300 space-y-1">
+                    <span className="font-bold text-slate-200 block">會計產出：</span>
+                    <p>{st.carbonOutputs[0]}</p>
                   </div>
                   <div className="p-3 rounded-xl bg-esg-950/30 border border-esg-500/20 text-xs text-esg-300">
-                    <span className="font-bold block mb-1 text-white">會計產出：</span>
-                    {st.carbonOutputs[0]}
+                    <span className="font-bold block mb-1 text-white">邊界澄清：</span>
+                    {st.boundaryClarification}
                   </div>
                 </div>
               ))}
@@ -360,11 +378,10 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 15:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 15 / 20</span>
-              <h2 className="text-3xl font-extrabold text-white">重大效益量化：為台船創造的真實價值</h2>
-              <p className="text-sm text-slate-300 mt-1">「投入 1 元，收穫多重實質利益」之投報藍圖</p>
+              <h2 className="text-3xl font-extrabold text-white">重大效益量化與客觀管理指標 KPI</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {QUANTIFIED_ROI.map((roi, idx) => (
@@ -380,7 +397,7 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 16:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 16 / 20</span>
               <h2 className="text-3xl font-extrabold text-white">針對台船高層的提案策略與溝通要點</h2>
@@ -405,20 +422,20 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 17:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 17 / 20</span>
-              <h2 className="text-3xl font-extrabold text-white">合約架構與彈性報價模式</h2>
+              <h2 className="text-3xl font-extrabold text-white">主軸 A：四道決策 Gate 與四類變更治理</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {CONTRACT_PRICING_MODULES.map((m, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-4">
-                  <span className="text-xs font-mono text-ocean-400 font-bold">計價模組 #{idx + 1}</span>
-                  <h3 className="text-base font-bold text-white">{m.module}</h3>
-                  <div className="p-3 rounded-xl bg-white/5 text-sm font-mono font-bold text-esg-300">
-                    {m.price}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              {DECISION_GATES.map((g, idx) => (
+                <div key={idx} className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+                  <span className="text-xl font-mono font-bold text-ocean-400">{g.gateId}</span>
+                  <h3 className="text-sm font-bold text-white">{g.name}</h3>
+                  <p className="text-xs text-slate-300">{g.triggerCondition}</p>
+                  <div className="p-2.5 rounded-lg bg-esg-950/30 text-[11px] text-esg-300 font-medium">
+                    {g.billingMilestone}
                   </div>
-                  <p className="text-xs text-slate-400">{m.scope}</p>
                 </div>
               ))}
             </div>
@@ -427,18 +444,18 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 18:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 18 / 20</span>
               <h2 className="text-3xl font-extrabold text-white">專案推進時程與里程碑（Roadmap）</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
               {ROADMAP_PHASES.map((ph, idx) => (
-                <div key={idx} className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3">
-                  <span className="text-xs font-mono text-ocean-400 font-bold block">{ph.phase}</span>
-                  <h3 className="text-sm font-bold text-white">{ph.duration}</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">{ph.title}</p>
-                  <div className="p-2.5 rounded-lg bg-esg-950/20 text-xs text-esg-300 font-medium">
+                <div key={idx} className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+                  <span className="text-[11px] font-mono text-ocean-400 font-bold block">{ph.phase}</span>
+                  <h3 className="text-xs font-bold text-white">{ph.duration}</h3>
+                  <p className="text-[11px] text-slate-400 leading-snug">{ph.title}</p>
+                  <div className="p-2 rounded-lg bg-esg-950/20 text-[10px] text-esg-300 font-medium">
                     🏁 {ph.deliverables[0]}
                   </div>
                 </div>
@@ -449,28 +466,37 @@ export const PresentationModeModal: React.FC<PresentationModeModalProps> = ({
 
       case 19:
         return (
-          <div className="max-w-5xl mx-auto py-8">
+          <div className="max-w-5xl mx-auto py-8 animate-fadeIn">
             <div className="text-center mb-6">
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 19 / 20</span>
-              <h2 className="text-3xl font-extrabold text-white">疑慮和風險應對（Q&A）</h2>
+              <h2 className="text-3xl font-extrabold text-white">五大前提條件與常見疑慮應對（Q&A）</h2>
             </div>
-            <div className="space-y-4">
-              {RISK_QNA.map((q, idx) => (
-                <div key={idx} className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                  <h3 className="text-sm font-bold text-amber-300">Q{idx + 1}：{q.question}</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">{q.answer}</p>
-                  <div className="text-xs text-esg-300 font-medium pt-1">
-                    💡 破局策略：{q.highlight}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <span className="text-xs font-mono font-bold text-ocean-400 uppercase">五大業主優先釐清前提</span>
+                {FIVE_PRECONDITIONS.slice(0, 3).map((pre, idx) => (
+                  <div key={idx} className="p-3.5 rounded-xl bg-black/40 border border-white/5 text-xs text-slate-300">
+                    <strong className="text-amber-300 block mb-1">{pre.title}</strong>
+                    <p>{pre.impactOnScope}</p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className="space-y-3">
+                <span className="text-xs font-mono font-bold text-esg-400 uppercase">常見疑慮應對</span>
+                {RISK_QNA.map((q, idx) => (
+                  <div key={idx} className="p-3.5 rounded-xl bg-black/40 border border-white/5 text-xs text-slate-300">
+                    <strong className="text-white block mb-1">Q{idx + 1}：{q.question}</strong>
+                    <p className="text-esg-300">💡 {q.highlight}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         );
 
       case 20:
         return (
-          <div className="max-w-5xl mx-auto py-8 text-center space-y-8">
+          <div className="max-w-5xl mx-auto py-8 text-center space-y-8 animate-fadeIn">
             <div>
               <span className="text-xs font-mono text-ocean-400 font-bold uppercase tracking-wider">Slide 20 / 20</span>
               <h2 className="text-3xl sm:text-4xl font-black text-white mt-1">結論與近期具體推進三步驟</h2>

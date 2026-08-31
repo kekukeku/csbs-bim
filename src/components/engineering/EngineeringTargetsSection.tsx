@@ -3,7 +3,7 @@ import { SectionHeading } from '../ui/SectionHeading';
 import { GlowCard } from '../ui/GlowCard';
 import { ENGINEERING_TARGETS } from '../../data/proposalData';
 import { Shipyard3DSimulator } from './Shipyard3DSimulator';
-import { Anchor, ShieldAlert, Cpu, CheckCircle2, AlertTriangle, ArrowRight, Gauge, Radio } from 'lucide-react';
+import { Anchor, ShieldAlert, Cpu, CheckCircle2, AlertTriangle, ArrowRight, Gauge, Radio, Microscope, Ruler, Clock } from 'lucide-react';
 
 export const EngineeringTargetsSection: React.FC = () => {
   const [activeTargetId, setActiveTargetId] = useState<string>(ENGINEERING_TARGETS[0].id);
@@ -14,11 +14,11 @@ export const EngineeringTargetsSection: React.FC = () => {
     <section id="engineering" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="四大標的工程方案"
-          slideTag="Slide 07 ~ 10 / 20"
+          badge="六大升級亮點 02 & 04"
+          slideTag="科學數據精修與空窗期施工"
           title="標的工程數位實施方案："
           gradientText="大/小船塢、海軍庫房與碼頭延壽"
-          subtitle="針對 950m 大塢、275m 小塢、海軍機敏庫房及 1~4 號碼頭，規劃即刻落地的 3D BIM 建模、微米級感測器與水下重防蝕施作方案。"
+          subtitle="基於科學事實修正劣化機理（大塢水位變動帶腐蝕、庫房 1,158 坪、碼頭使用 35~55 年），提出直面大塢「停塢即停營收」的輕量快拆分段工法與四大關鍵淨空檢核！"
         />
 
         {/* Embedded Live 3D Digital Twin Sandbox */}
@@ -48,7 +48,7 @@ export const EngineeringTargetsSection: React.FC = () => {
 
         {/* Active Target Detailed Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-fadeIn">
-          {/* Left Column: Target Specs & Pain Points (5 cols) */}
+          {/* Left Column: Target Specs, Scientific Mechanism & Commercial Reality (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             {/* Target Header Card */}
             <div className="p-6 rounded-3xl bg-[#0C152E]/90 border border-ocean-500/30 backdrop-blur-xl space-y-4">
@@ -77,24 +77,30 @@ export const EngineeringTargetsSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Pain Points Card */}
-            <div className="p-6 rounded-3xl bg-rose-950/20 border border-rose-500/30 backdrop-blur-xl space-y-4">
-              <h4 className="text-sm font-bold text-rose-300 uppercase font-mono flex items-center gap-2">
-                <AlertTriangle className="w-4 h-4 text-rose-400" />
-                現場關鍵痛點與沉疴
+            {/* Scientific Mechanism Card */}
+            <div className="p-6 rounded-3xl bg-cyan-950/20 border border-cyan-500/30 backdrop-blur-xl space-y-3">
+              <h4 className="text-sm font-bold text-cyan-300 uppercase font-mono flex items-center gap-2">
+                <Microscope className="w-4 h-4 text-cyan-400" />
+                科學劣化機理與事實依據
               </h4>
-              <ul className="space-y-2.5">
-                {activeTarget.painPoints.map((pt, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0 mt-2" />
-                    <span>{pt}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                {activeTarget.scientificMechanism}
+              </p>
+            </div>
+
+            {/* Commercial Reality Card */}
+            <div className="p-6 rounded-3xl bg-amber-950/20 border border-amber-500/30 backdrop-blur-xl space-y-3">
+              <h4 className="text-sm font-bold text-amber-300 uppercase font-mono flex items-center gap-2">
+                <Clock className="w-4 h-4 text-amber-400" />
+                直面商業現實解法
+              </h4>
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
+                {activeTarget.commercialReality}
+              </p>
             </div>
           </div>
 
-          {/* Right Column: Solutions, Sensors & CSBS Role (7 cols) */}
+          {/* Right Column: Solutions, Clearance Checks & Sensor Specs (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             {/* Solutions Accordion / List */}
             <div className="p-6 rounded-3xl bg-[#0C152E]/90 border border-esg-500/30 backdrop-blur-xl space-y-5">
@@ -121,6 +127,22 @@ export const EngineeringTargetsSection: React.FC = () => {
                     <div className="ml-8 p-2.5 rounded-lg bg-esg-950/30 text-xs text-esg-300 font-medium">
                       🎯 預期效益：{sol.benefit}
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Depth Clearance Checks (淨空檢核) */}
+            <div className="p-6 rounded-3xl bg-purple-950/20 border border-purple-500/30 backdrop-blur-xl space-y-3">
+              <h4 className="text-sm font-bold text-purple-300 uppercase font-mono flex items-center gap-2">
+                <Ruler className="w-4 h-4 text-purple-400" />
+                三維 BIM 關鍵空間與淨空檢核項目（Clearance Checks）
+              </h4>
+              <div className="space-y-2">
+                {activeTarget.clearanceChecks.map((chk, i) => (
+                  <div key={i} className="flex items-start gap-2.5 p-2.5 rounded-xl bg-black/40 border border-white/5 text-xs text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <span>{chk}</span>
                   </div>
                 ))}
               </div>

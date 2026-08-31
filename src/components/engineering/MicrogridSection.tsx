@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { GlowCard } from '../ui/GlowCard';
 import { MICROGRID_DATA } from '../../data/proposalData';
-import { Zap, ShieldCheck, Sun, BatteryCharging, AlertTriangle, ArrowRight, CheckCircle2, Lock, Radio } from 'lucide-react';
+import { Zap, ShieldCheck, Sun, BatteryCharging, AlertTriangle, ArrowRight, CheckCircle2, Lock, Radio, Info } from 'lucide-react';
 
 export const MicrogridSection: React.FC = () => {
   const [gridMode, setGridMode] = useState<'normal' | 'wartime'>('normal');
@@ -11,24 +11,24 @@ export const MicrogridSection: React.FC = () => {
     <section id="microgrid" className="py-20 relative bg-gradient-to-b from-transparent via-[#091128]/70 to-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="國防綠能微電網"
-          slideTag="Slide 11 / 20"
-          title="綠能微電網解方："
-          gradientText="平戰轉換與儲能安全破局"
-          subtitle="解決陳經理反饋之「大陸寧德時代涉密無法採用、台灣在地儲能成本高」痛點，打造 100% 國防合規非紅色供應鏈與 72 小時連續孤島韌性電網！"
+          badge="六大升級亮點 05"
+          slideTag="選項服務 ｜ 嚴守履約邊界"
+          title="務實調整綠能儲能邊界："
+          gradientText="平戰轉換與儲能安全（選項服務）"
+          subtitle="誠實揭露戰備儲能與微電網受限於海軍國防部核准、防火避難綜合檢討與涉密資安審查等前提，列為【選項服務】，未經業主核准前不具履約義務，避免未審先承諾！"
         />
 
-        {/* Client Dilemma Notice */}
-        <div className="mb-12 p-6 rounded-3xl bg-amber-950/20 border border-amber-500/30 backdrop-blur-xl max-w-4xl mx-auto flex items-start gap-4">
-          <div className="p-3 rounded-2xl bg-amber-500/20 text-amber-300 shrink-0 mt-1">
-            <AlertTriangle className="w-6 h-6" />
+        {/* Boundary Notice Ribbon */}
+        <div className="mb-10 p-6 rounded-3xl bg-sun-950/30 border border-sun-500/40 backdrop-blur-xl max-w-4xl mx-auto flex items-start gap-4">
+          <div className="p-3 rounded-2xl bg-sun-500/20 text-sun-300 shrink-0 mt-0.5">
+            <Info className="w-6 h-6" />
           </div>
           <div>
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 block mb-1">
-              陳經理會議關鍵提問與限制條件：
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-sun-400 block mb-1">
+              【履約責任邊界澄清】：
             </span>
-            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed italic">
-              "{MICROGRID_DATA.clientDilemma}"
+            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+              {MICROGRID_DATA.boundaryNotice}
             </p>
           </div>
         </div>
@@ -71,15 +71,18 @@ export const MicrogridSection: React.FC = () => {
                   <Lock className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono text-ocean-400 uppercase font-bold">國防資安最高標準</span>
-                  <h4 className="text-lg font-bold text-white">非紅色供應鏈（100% 國安合規）</h4>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono text-ocean-400 uppercase font-bold">國防資安審查</span>
+                    <span className="text-[10px] font-mono bg-sun-500/20 text-sun-300 px-2 py-0.5 rounded border border-sun-500/30 font-bold">選項服務</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-white mt-0.5">非紅色供應鏈（100% 國安合規）</h4>
                 </div>
               </div>
 
               <div className="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
                 <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
                   <strong className="text-white block">🔋 UL9540A 國際防爆認證：</strong>
-                  採用通過最嚴苛燃燒測試之非中資磷酸鐵鋰（LFP）電芯，或台泥儲能（NHOA）/長園科等在地製造高安全性電池組。
+                  若經海軍核准，採用通過最嚴苛燃燒測試之非中資磷酸鐵鋰（LFP）電芯，或台泥儲能（NHOA）/長園科等在地製造高安全性電池組。
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
@@ -89,7 +92,7 @@ export const MicrogridSection: React.FC = () => {
               </div>
 
               <div className="p-3 rounded-xl bg-esg-500/10 border border-esg-500/30 text-xs text-esg-300 font-medium">
-                ✔ 通過海軍國艦國造涉密廠區資安稽核
+                ✔ 需經國防部與海軍專案正式核定後由外購專業統包商施作
               </div>
             </GlowCard>
           </div>
@@ -148,7 +151,7 @@ export const MicrogridSection: React.FC = () => {
                     </div>
 
                     <div className="p-4 rounded-xl bg-esg-950/40 border border-esg-500/30 text-xs text-esg-200">
-                      <strong>ESG 成果：</strong>直接產出符合 ISO 14064 範疇二之用電減碳確信數據，納入台船年度永續報告書。
+                      <strong>ESG 成果：</strong>隨標單產出真實發電與節電憑據，供台船永續部列入 ESG 範疇二減碳實績。
                     </div>
                   </div>
                 ) : (
@@ -178,7 +181,7 @@ export const MicrogridSection: React.FC = () => {
                     </div>
 
                     <div className="p-4 rounded-xl bg-fire-950/40 border border-fire-500/40 text-xs text-fire-200">
-                      <strong>國安戰略價值：</strong>向國防部海軍展現台船基地具備頂級戰備韌性，為爭取後續軍艦維保大單奠定基礎。
+                      <strong>國安戰略價值：</strong>經海軍核准建置後，展現國安級戰備防護能力，為爭取後續軍艦維保奠定基礎。
                     </div>
                   </div>
                 )}

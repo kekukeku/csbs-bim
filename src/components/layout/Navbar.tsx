@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Anchor, Presentation, Sparkles, Menu, X, ShieldCheck, Download, ChevronRight } from 'lucide-react';
+import { Anchor, Presentation, Sparkles, Menu, X, ShieldCheck, Download, ChevronRight, Scale, GitBranch, AlertCircle } from 'lucide-react';
 import { PROPOSAL_META } from '../../data/proposalData';
 
 interface NavbarProps {
@@ -20,13 +20,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPresentation }) => {
 
   const navLinks = [
     { href: '#overview', label: '核心架構' },
-    { href: '#dilemmas', label: '痛點與轉型' },
+    { href: '#commitment-tiers', label: '承諾分層與責任' },
+    { href: '#risk-governance', label: '主軸A 決策Gate' },
     { href: '#engineering', label: '4大工程標的' },
-    { href: '#microgrid', label: '微電網平戰轉換' },
-    { href: '#bim-platform', label: 'BIM 數位雙生' },
+    { href: '#microgrid', label: '微電網(選項)' },
     { href: '#esg-carbon', label: 'IFRS & 碳帳本' },
-    { href: '#roi-impact', label: '效益量化' },
+    { href: '#roi-impact', label: '效益與KPI' },
     { href: '#stakeholders', label: '分層話術' },
+    { href: '#preconditions', label: '5大前提' },
     { href: '#roadmap', label: '時程與合約' },
   ];
 
@@ -52,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPresentation }) => {
                 CSBS 台船港灣雙生
               </span>
               <span className="text-[10px] font-mono font-bold bg-esg-500/20 text-esg-300 border border-esg-500/30 px-2 py-0.5 rounded-full hidden sm:inline-block">
-                IFRS S1/S2 合規
+                六大升級 v3.0
               </span>
             </div>
             <span className="text-[11px] text-slate-400 block -mt-0.5">
@@ -62,12 +63,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPresentation }) => {
         </a>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden xl:flex items-center gap-1.5 bg-slate-900/60 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
+        <div className="hidden xl:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
           {navLinks.map(link => (
             <a
               key={link.href}
               href={link.href}
-              className="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all"
+              className="px-2.5 py-1.5 text-[11px] font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all"
             >
               {link.label}
             </a>
@@ -91,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPresentation }) => {
             className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-xl bg-gradient-to-r from-esg-500 to-ocean-500 text-slate-950 hover:brightness-110 shadow-glow-esg transition-all"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>立即推進行動</span>
+            <span>推進行動</span>
           </a>
         </div>
 
