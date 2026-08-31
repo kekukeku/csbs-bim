@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
         {/* Bottom copyright & scroll to top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © 2026 CSBS BIM & ESG Joint Initiative. All rights reserved. 網址：<span className="text-ocean-400 font-mono">csbs.kuo.cc.cd</span>
+            © 2026 CSBS BIM & ESG Joint Initiative. All rights reserved. 網址：<span className="text-ocean-400 font-mono">csbs.kkuo.cc.cd</span>
           </div>
           <button
             onClick={scrollToTop}
