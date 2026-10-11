@@ -1,47 +1,71 @@
-# 以 BIM 數位雙生與 ESG 永續治理 賦能台船港灣工程升級
+# 台船防蝕及台船營造工程精進及提昇方案 ｜ 簡報線上系統
 
-> **台灣環境管理會計協會 × 中國科技大學建築設計院 × 台船防蝕（台蝕） / 台船營造（台營） 聯合提案平台**
-> 
-> 線上網址：[https://csbs.kuo.cc.cd](https://csbs.kuo.cc.cd)
-
----
-
-## 專案亮點
-
-- **五大戰略單元全景呈現**：完整納入 20 頁提案之核心架構、痛點分析、工程方案、合規對接與商業推進。
-- **繽紛多彩現代視覺（Vibrant Colorful & Glassmorphism）**：Neon 霓虹光暈、深海海洋藍、翡翠永續綠、多層次毛玻璃卡片與流光動畫。
-- **即時 3D 港灣雙生模擬器（Live Digital Twin Sandbox）**：以 Isometric 3D 視角模擬 950m 大塢、275m 小塢、海軍新庫房與 1~4 號碼頭之感測器，支援「綠/黃/紅」三色預警演算法即時切換與波形監控。
-- **平戰轉換綠能微電網**： UL9540A 認證 LFP 儲能系統，平時削峰填谷省電費 vs 戰時 72 小時連續孤島供電。
-- **全生命週期碳帳本**：設計選材、施工建造、營運維護三階段 ISO 14064 / 14067 碳盤查與 IFRS S1/S2 會計師確信底稿。
-- **互動式 ROI 效益計算機**：自訂工程 CAPEX 預算，即時試算停工損失降低、BIM 重工消除與投資報酬乘數。
-- **高層分層溝通指南**：針對蔡董事長、蕭課長與現場班長之核心關注重點與一擊必殺話術。
-- **內建 20 頁全景簡報模式**：支援鍵盤左右鍵切換、全螢幕簡報投影與演講備忘錄。
+> **台灣環境管理會計協會 × 中國科技大學建築設計院 × 台船防蝕（台蝕） / 台船營造（台營） 專案精進平台**  
+> 簡報版本：2026.10.14 精修版（共 27 頁全圖文視覺化）  
+> 線上網址：[https://csbs.kkuo.cc.cd](https://csbs.kkuo.cc.cd)  
+> 簡報 PDF 下載：[1014簡報.pdf](assets/1014簡報.pdf)
 
 ---
 
-## 技術棧
+## 簡報架構與亮點（27 頁全景）
 
-- **Core**: React 18 + TypeScript + Vite 6
-- **Styling**: Tailwind CSS + Custom Neon Design Tokens + Glassmorphism
-- **Icons & Effects**: Lucide React + Canvas Confetti + Custom Canvas 3D Engine
-- **Hosting & Domain**: Cloudflare Pages + GitHub Pages (`csbs.kuo.cc.cd`)
+本系統為「台船防蝕及台船營造工程精進及提昇方案」之專屬互動式簡報網站，涵蓋四大精進工作、第一期小船塢示範場域落地、現場作業安全數位化全生命週期三大環節與 36 個月導入路徑：
+
+- **PART 01 · 方案緣起與示範場域**：
+  - 外部驅動力：雙軸轉型關鍵時刻（低碳韌性與智慧工安差異化競爭）
+  - 為何首選「第一期小船塢」作為先行示範？（長 275m、寬 45m、深 12m，邊界清晰、試驗田最佳場域）
+  - 從「點」到「面」的複製與擴散藍圖（1~4 號碼頭、商船大塢、全區營建）
+- **PART 02 · 整體精進架構與四大工作**：
+  - 工作一（協會主責）：低碳四步走（排碳盤查、合約規範、ISO 14064/14067、減碳工法）
+  - 工作二（中國科大）：施工安全智慧監測（多維感知、邊緣 AI、現場處置）
+  - 工作三（中國科大）：塢壁結構全生命週期監測與三級預警（沉陷、傾角、裂縫、被動修復轉主動預警）
+  - 工作四（中國科大）：BIM 整合平台四大層次技術架構（空間幾何為唯一索引，低碳/工安/結構三維可視化）
+  - 永續揭露：對接 IFRS S1/S2 與金管會年報永續確信底稿
+- **PART 03 · 船塢作業安全數位化**：
+  - 現場痛點剖析：制度健全，落實瓶頸何在？（人力盤點、動火監視、高空與局限空間）
+  - 船塢五大作業風險與管控關鍵（墜落、局限空間、動火、吊掛、結構位移）
+  - 關鍵洞察：為什麼「局限空間」不能單靠監視器？（盲區覆蓋盲點，必須建立進出管制＋氣體感知）
+  - 全生命週期三環節實施細節：
+    - 環節一：進場前安全防線（LINE 線上申辦、資質核驗、動態審查，審核時間從數小時降至 3 分鐘）
+    - 環節二：進場中即時管控（多維感知網、穿戴健康監測、邊緣 AI 異常自動告警）
+    - 環節三：離場後閉環驗收（刷卡人員自動清點、局限空間防滯留、動火 30 分鐘複巡防暗火）
+  - 中國科大 3D 模擬展示（即時監控台、隱患辨識情境考核、動態環境風險評估引擎）
+- **PART 04 · 導入路徑、優先項目與三大承諾**：
+  - 36 個月總體導入路徑規劃（12 個月建置 ＋ 24 個月維運）
+  - 立竿見影：優先啟動之五大項目
+  - 三大承諾：無痛導入、現場有感、管理減負
+  - 下一步推動建議：台營協作與確認事項、台營三大優勢
+  - 精益求精結尾
+
+---
+
+## 線上互動功能
+
+- **16:9 自適應投影片播放模式（Deck Mode）**：
+  - 自動偵測視窗比例並等比例縮放（Scale），完美適配投影機、筆電螢幕與行動裝置。
+  - 支援鍵盤快速鍵切換（`←` / `→`、`Space`、`Enter`、`PageUp` / `PageDown`、`Home` / `End`）。
+  - 支援觸控螢幕左右滑動手勢（Swipe）。
+- **投影片大廳總覽（Grid Mode, 快捷鍵 `G`）**：
+  - 一覽全 27 頁投影片卡片，支援關鍵字即時搜尋篩選（如：BIM、局限空間、IFRS、船塢、3D），點擊立即跳轉。
+- **連續捲動長文閱讀模式（Scroll Mode, 快捷鍵 `M`）**：
+  - 一鍵切換連續捲動模式，適合由上而下通篇瀏覽、列印或使用瀏覽器文字搜尋。
+- **全螢幕播放（快捷鍵 `F`）**：
+  - 隱藏介面干擾，全螢幕沉浸式投影。
+- **精確 URL 錨點（Hash Routing）**：
+  - 每一頁均有專屬網址（例如 `#1` 至 `#27`），分享特定章節方便快捷。
+- **PDF 直接下載**：
+  - 整合下載按鈕，直連最新完成之 `1014簡報.pdf`（11.7MB）。
 
 ---
 
 ## 本機開發與建置
 
 ```bash
-# 安裝依賴
-npm install
+# 安裝依賴（秒級完成）
+npm ci
 
-# 啟動開發伺服器
-npm run dev
-
-# 型別檢查與正式打包（輸出至 dist/）
+# 執行建置（輸出靜態產物至 dist/）
 npm run build
-
-# 預覽打包產物
-npm run preview
 ```
 
 ---
@@ -50,45 +74,28 @@ npm run preview
 
 ```text
 ├── .github/workflows/deploy.yml  # Cloudflare Pages & GitHub Pages CI/CD
-├── public/
-│  ├── CNAME           # csbs.kuo.cc.cd
-│  ├── _headers          # Cloudflare 效能與資安標頭
-│  └── favicon.svg        # 向量高科技港灣雙生圖標
-├── src/
-│  ├── components/
-│  │  ├── engineering/      # 4大工程標的與 3D 模擬器
-│  │  ├── esg-compliance/    # IFRS S1/S2 與全生命週期碳帳本
-│  │  ├── execution/       # 溝通術、模組化報價、Roadmap、Q&A、行動步驟
-│  │  ├── hero/         # 繽紛沉浸式 Hero 區
-│  │  ├── impact/        # 重大效益與互動式 ROI 計算機
-│  │  ├── layout/        # Navbar, Footer, 20頁簡報彈窗
-│  │  ├── overview/       # 五大戰略單元全景卡片
-│  │  ├── pain-points/      # 雙重困境與四大承攬瓶頸
-│  │  ├── strategy/       # 戰略翻轉對比與黃金三角陣容
-│  │  ├── tech-platform/     # 中科大 BIM Web 平台與三色警報
-│  │  └── ui/          # Badge, GlowCard, SectionHeading 通用元件
-│  ├── data/
-│  │  └── proposalData.ts    # 20 頁提案完整結構化資料庫
-│  ├── styles/
-│  │  └── index.css       # Neon 霓虹、漸層與毛玻璃自訂樣式
-│  ├── types/
-│  │  └── index.ts        # TypeScript 型別宣告
-│  ├── App.tsx          # 應用主入口
-│  └── main.tsx          # React DOM 掛載點
-├── tailwind.config.js       # 繽紛多彩色彩系統與光暈配置
-└── vite.config.ts         # Vite 建置配置
+├── .gitignore
+├── CNAME                         # csbs.kkuo.cc.cd
+├── README.md
+├── assets/
+│   ├── 1014簡報.pdf              # 11.7MB 完整視覺化簡報 PDF
+│   ├── csbc_drydock_real.png     # 台船船塢高解析實景
+│   ├── drydock_digital_twin.jpg  # 船塢數位雙生示意
+│   ├── eman_logo.png             # 台灣環境管理會計協會識別
+│   ├── low_carbon_shipbuilding.jpg
+│   ├── sim_hazard_training.png   # 中科大 3D 模擬隱患辨識
+│   ├── sim_realtime_monitor.png  # 中科大 3D 即時監控台
+│   ├── sim_risk_assessment.png   # 中科大 3D 環境風險引擎
+│   └── smart_safety_inspection.jpg
+├── build.js                      # 輕量標準 Node.js 構建腳本
+├── generate_site.py              # 簡報網站產生器
+├── index.html                    # 完整獨立互動簡報網頁 (7.4MB)
+├── package.json
+└── package-lock.json
 ```
 
 ---
 
-## 網域與 Cloudflare Pages 綁定說明
+## 授權與聲明
 
-1. 網域已設定 `CNAME` 為 `csbs.kuo.cc.cd`。
-2. 在 Cloudflare DNS 面板將 `csbs.kuo.cc.cd` 指向 Cloudflare Pages 專案或自訂網域。
-3. 任何推送至 `main` 分支的變更皆會透過 GitHub Actions 自動打包並發佈。
-
----
-
-## 授權與宣告
-
-本平台內容為台灣環境管理會計協會與中國科技大學建築設計院針對台船防蝕及台船營造之專屬提案。
+本提案內容由台灣環境管理會計協會與中國科技大學建築設計院聯合編製，專供台船防蝕及台船營造工程精進專案研討使用。
