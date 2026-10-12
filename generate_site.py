@@ -75,8 +75,8 @@ final_html = f"""<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>台船防蝕及台船營造工程精進及提昇方案 ｜ 簡報線上瀏覽系統 (2026.10.14)</title>
-    <meta name="description" content="台船防蝕及台船營造工程精進及提昇方案：以第一期小船塢為發動機，推動智慧工安、結構監測、BIM三維平台與低碳合約精進。">
+    <title>台船營造工程低碳韌性及場域風險精進方案 ｜ 簡報線上瀏覽系統 (2026.10.14)</title>
+    <meta name="description" content="台船營造工程低碳韌性及場域風險精進方案：以第一期小船塢為發動機，推動智慧工安、結構監測、BIM三維平台與低碳合約精進。">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
     <!-- Base slide original styles -->
@@ -649,7 +649,7 @@ final_html = f"""<!DOCTYPE html>
                     <line x1="8" y1="21" x2="16" y2="21"/>
                     <line x1="12" y1="17" x2="12" y2="21"/>
                 </svg>
-                <span>台船防蝕及營造工程精進方案</span>
+                <span>台船營造工程低碳韌性及場域風險精進方案</span>
             </a>
             <span class="nav-badge">2026.10.14</span>
         </div>
@@ -702,7 +702,7 @@ final_html = f"""<!DOCTYPE html>
     <div id="floatingBar">
         <span class="page-indicator">第 <span id="currentNum">01</span> / 27 頁</span>
         <span style="color: rgba(255,255,255,0.2);">|</span>
-        <span class="slide-current-title" id="currentTitle">台船防蝕及台船營造工程精進及提昇方案</span>
+        <span class="slide-current-title" id="currentTitle">台船營造工程低碳韌性及場域風險精進方案</span>
     </div>
 
     <!-- Overview Modal Drawer -->
